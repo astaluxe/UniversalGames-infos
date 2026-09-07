@@ -123,31 +123,59 @@
       background: rgba(255,255,255,0.07);
     }
 
-    .calculator {
+    .trade-columns {
       display: grid;
-      gap: 12px;
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
     }
 
-    .calculator input {
-      padding: 14px;
+    .trade-side {
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .trade-side h3 {
+      margin-top: 0;
+    }
+
+    .trade-select {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0;
+      border-radius: 10px;
+      border: none;
       font-size: 16px;
-      border-radius: 10px;
-      border: none;
     }
 
-    .calc-btn {
-      padding: 14px;
+    .trade-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #7c5cff;
       color: white;
-      font-size: 16px;
+      font-size: 17px;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    #tradeResult {
-      font-weight: bold;
+    .trade-result {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 14px;
+      background: rgba(124,92,255,0.15);
+      text-align: center;
       font-size: 18px;
+    }
+
+    .trade-values {
+      margin-top: 15px;
+      font-size: 15px;
+      opacity: 0.9;
     }
 
     .code-card,
@@ -209,8 +237,6 @@
     </section>
 
 
-    <!-- MENÚ -->
-
     <nav class="menu-grid">
 
       <a
@@ -258,8 +284,6 @@
     </nav>
 
 
-    <!-- FRUTAS -->
-
     <section
       class="section-box"
       id="frutas"
@@ -285,7 +309,37 @@
 
         <div class="fruit" data-fruit="Rocket">
           <h3>🚀 Rocket</h3>
-          <p>Fruta para comenzar y experimentar.</p>
+          <p>Fruta básica para empezar.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Spin">
+          <h3>🌀 Spin</h3>
+          <p>Fruta sencilla para los primeros niveles.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Blade">
+          <h3>⚔️ Blade</h3>
+          <p>Fruta basada en ataques cortantes.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Spring">
+          <h3>🪀 Spring</h3>
+          <p>Movilidad y ataques elásticos.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Bomb">
+          <h3>💣 Bomb</h3>
+          <p>Ataques explosivos.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Smoke">
+          <h3>💨 Smoke</h3>
+          <p>Ataques y habilidades de humo.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Spike">
+          <h3>🌵 Spike</h3>
+          <p>Ataques con pinchos.</p>
         </div>
 
         <div class="fruit" data-fruit="Flame">
@@ -293,39 +347,164 @@
           <p>Ataques basados en fuego.</p>
         </div>
 
+        <div class="fruit" data-fruit="Falcon">
+          <h3>🦅 Falcon</h3>
+          <p>Movilidad aérea.</p>
+        </div>
+
         <div class="fruit" data-fruit="Ice">
           <h3>🧊 Ice</h3>
           <p>Poderes de hielo y control.</p>
         </div>
 
+        <div class="fruit" data-fruit="Sand">
+          <h3>🏜️ Sand</h3>
+          <p>Ataques de arena.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Dark">
+          <h3>🌑 Dark</h3>
+          <p>Control y habilidades oscuras.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Diamond">
+          <h3>💎 Diamond</h3>
+          <p>Defensa y resistencia.</p>
+        </div>
+
         <div class="fruit" data-fruit="Light">
           <h3>✨ Light</h3>
-          <p>Movilidad y ataques de luz.</p>
+          <p>Muy buena movilidad.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Rubber">
+          <h3>🧤 Rubber</h3>
+          <p>Ataques elásticos y cuerpo a cuerpo.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Barrier">
+          <h3>🧱 Barrier</h3>
+          <p>Crea barreras defensivas.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Ghost">
+          <h3>👻 Ghost</h3>
+          <p>Habilidades fantasmales.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Magma">
+          <h3>🌋 Magma</h3>
+          <p>Gran daño y ataques de magma.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Quake">
+          <h3>🌊 Quake</h3>
+          <p>Ataques de ondas y terremotos.</p>
         </div>
 
         <div class="fruit" data-fruit="Buddha">
           <h3>🟡 Buddha</h3>
-          <p>Popular para progresar y luchar.</p>
+          <p>Muy usada para subir de nivel.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Love">
+          <h3>💗 Love</h3>
+          <p>Habilidades especiales de control.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Spider">
+          <h3>🕷️ Spider</h3>
+          <p>Ataques rápidos y versátiles.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Sound">
+          <h3>🎵 Sound</h3>
+          <p>Ataques basados en sonido.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Phoenix">
+          <h3>🔥 Phoenix</h3>
+          <p>Movilidad y recuperación.</p>
         </div>
 
         <div class="fruit" data-fruit="Portal">
           <h3>🌀 Portal</h3>
-          <p>Especializada en movilidad.</p>
+          <p>Excelente movilidad.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Rumble">
+          <h3>⚡ Rumble</h3>
+          <p>Ataques eléctricos.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Pain">
+          <h3>🔮 Pain</h3>
+          <p>Ataques de largo alcance.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Blizzard">
+          <h3>❄️ Blizzard</h3>
+          <p>Ataques de hielo y tormenta.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Gravity">
+          <h3>🌌 Gravity</h3>
+          <p>Manipulación de gravedad.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Mammoth">
+          <h3>🦣 Mammoth</h3>
+          <p>Transformación y gran resistencia.</p>
+        </div>
+
+        <div class="fruit" data-fruit="T-Rex">
+          <h3>🦖 T-Rex</h3>
+          <p>Transformación y ataques fuertes.</p>
         </div>
 
         <div class="fruit" data-fruit="Dough">
           <h3>🍩 Dough</h3>
-          <p>Conocida por sus ataques y combos.</p>
+          <p>Muy conocida por sus combos.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Shadow">
+          <h3>🌑 Shadow</h3>
+          <p>Ataques oscuros y combos.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Venom">
+          <h3>☠️ Venom</h3>
+          <p>Daño continuo y ataques venenosos.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Control">
+          <h3>🔵 Control</h3>
+          <p>Habilidades especiales de control.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Spirit">
+          <h3>👻 Spirit</h3>
+          <p>Fruta mítica con habilidades especiales.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Leopard">
+          <h3>🐆 Leopard</h3>
+          <p>Transformación y velocidad.</p>
+        </div>
+
+        <div class="fruit" data-fruit="Yeti">
+          <h3>❄️ Yeti</h3>
+          <p>Transformación y ataques de hielo.</p>
         </div>
 
         <div class="fruit" data-fruit="Kitsune">
           <h3>🦊 Kitsune</h3>
-          <p>Fruta especial con gran movilidad.</p>
+          <p>Gran movilidad y habilidades especiales.</p>
         </div>
 
         <div class="fruit" data-fruit="Dragon">
           <h3>🐉 Dragon</h3>
-          <p>Poderes inspirados en un dragón.</p>
+          <p>Una de las frutas más potentes.</p>
         </div>
 
       </div>
@@ -337,8 +516,6 @@
     </section>
 
 
-    <!-- TIER LIST -->
-
     <section
       class="section-box"
       id="tierlist"
@@ -349,16 +526,14 @@
       </h2>
 
       <p>
-        Clasificación inicial de Universal Games.
-        Más adelante podremos separarla por PvP,
-        farmeo y raids.
+        Esta sección la iremos actualizando según
+        PvP, farmeo y utilidad.
       </p>
 
       <div class="tier">
         <strong>⭐ S Tier</strong>
         <p>
-          Frutas de nivel muy alto para determinados
-          estilos de juego.
+          Algunas de las frutas más fuertes o útiles.
         </p>
       </div>
 
@@ -372,14 +547,14 @@
       <div class="tier">
         <strong>👍 B Tier</strong>
         <p>
-          Buenas opciones dependiendo del jugador.
+          Buenas frutas dependiendo del jugador.
         </p>
       </div>
 
       <div class="tier">
         <strong>⚪ C Tier</strong>
         <p>
-          Más situacionales o útiles para empezar.
+          Más situacionales o para empezar.
         </p>
       </div>
 
@@ -389,8 +564,6 @@
 
     </section>
 
-
-    <!-- TRADE CALCULATOR -->
 
     <section
       class="section-box"
@@ -402,36 +575,85 @@
       </h2>
 
       <p>
-        Introduce el valor de lo que das
-        y el valor de lo que recibes.
+        Selecciona hasta 4 frutas que das y
+        hasta 4 frutas que recibes.
       </p>
 
-      <div class="calculator">
+      <div class="trade-columns">
 
-        <input
-          id="giveValue"
-          type="number"
-          placeholder="Valor de lo que das"
-        >
+        <div class="trade-side">
 
-        <input
-          id="receiveValue"
-          type="number"
-          placeholder="Valor de lo que recibes"
-        >
+          <h3>
+            📤 TÚ DAS
+          </h3>
 
-        <button
-          class="calc-btn"
-          onclick="calculateTrade()"
-        >
-          Comparar trade
-        </button>
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
 
-        <p id="tradeResult">
-          Introduce dos valores.
-        </p>
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+        </div>
+
+
+        <div class="trade-side">
+
+          <h3>
+            📥 TÚ RECIBES
+          </h3>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+        </div>
 
       </div>
+
+
+      <button
+        class="trade-button"
+        onclick="calculateFruitTrade()"
+      >
+        💱 CALCULAR TRADE
+      </button>
+
+
+      <div
+        id="tradeResult"
+        class="trade-result"
+      >
+        Selecciona las frutas del intercambio.
+      </div>
+
+
+      <p class="trade-values">
+        ⚠️ Los valores son orientativos y se pueden
+        actualizar cuando cambie el mercado de trades.
+      </p>
+
 
       <a class="top-link" href="#top">
         ↑ Volver arriba
@@ -439,8 +661,6 @@
 
     </section>
 
-
-    <!-- CÓDIGOS -->
 
     <section
       class="section-box"
@@ -452,29 +672,23 @@
       </h2>
 
       <p>
-        Aquí pondremos los códigos activos
-        de Blox Fruits y su recompensa.
+        Aquí iremos añadiendo códigos activos
+        y sus recompensas.
       </p>
 
       <div class="code-card">
         🎁 <strong>Códigos de experiencia</strong>
         <p>
-          Espacio preparado para códigos de XP.
+          Próximamente añadiremos códigos comprobados.
         </p>
       </div>
 
       <div class="code-card">
         🔄 <strong>Reset de estadísticas</strong>
         <p>
-          Espacio preparado para códigos de reset.
+          Próximamente añadiremos códigos comprobados.
         </p>
       </div>
-
-      <p>
-        ⚠️ Los códigos cambian con el tiempo,
-        así que añadiremos únicamente los que
-        comprobemos que siguen activos.
-      </p>
 
       <a class="top-link" href="#top">
         ↑ Volver arriba
@@ -482,8 +696,6 @@
 
     </section>
 
-
-    <!-- BUILDS -->
 
     <section
       class="section-box"
@@ -501,11 +713,12 @@
         </h3>
 
         <p>
-          Pensada para jugadores que quieren
-          centrar gran parte de su daño en espada.
+          Para jugadores que quieren centrar
+          gran parte de su daño en espada.
         </p>
 
       </div>
+
 
       <div class="build-card">
 
@@ -514,11 +727,12 @@
         </h3>
 
         <p>
-          Para jugadores que quieren aprovechar
-          principalmente las habilidades de su fruta.
+          Para aprovechar principalmente
+          las habilidades de fruta.
         </p>
 
       </div>
+
 
       <div class="build-card">
 
@@ -527,11 +741,11 @@
         </h3>
 
         <p>
-          Una opción para repartir el estilo de juego
-          entre distintas habilidades.
+          Combina diferentes tipos de daño.
         </p>
 
       </div>
+
 
       <a class="top-link" href="#top">
         ↑ Volver arriba
@@ -539,8 +753,6 @@
 
     </section>
 
-
-    <!-- GUÍAS -->
 
     <section
       class="section-box"
@@ -559,11 +771,11 @@
 
         <p>
           Completa misiones adecuadas a tu nivel,
-          mejora tu equipo y busca una forma eficiente
-          de derrotar enemigos.
+          mejora tu equipo y derrota enemigos.
         </p>
 
       </div>
+
 
       <div class="guide-card">
 
@@ -572,11 +784,12 @@
         </h3>
 
         <p>
-          A medida que progreses podrás descubrir
-          nuevas zonas, enemigos y desafíos.
+          Descubre nuevas zonas,
+          enemigos y desafíos.
         </p>
 
       </div>
+
 
       <div class="guide-card">
 
@@ -585,11 +798,12 @@
         </h3>
 
         <p>
-          Aprende combos, movilidad y cuándo
-          utilizar cada habilidad.
+          Practica combos,
+          movilidad y habilidades.
         </p>
 
       </div>
+
 
       <a class="top-link" href="#top">
         ↑ Volver arriba
@@ -597,13 +811,10 @@
 
     </section>
 
-
   </main>
 
 
   <script>
-
-    /* BUSCADOR DE FRUTAS */
 
     const fruitSearch =
       document.getElementById("fruitSearch");
@@ -627,13 +838,9 @@
             fruit.dataset.fruit.toLowerCase();
 
           if (name.includes(text)) {
-
             fruit.style.display = "";
-
           } else {
-
             fruit.style.display = "none";
-
           }
 
         });
@@ -642,49 +849,197 @@
     );
 
 
-    /* TRADE CALCULATOR */
+    const fruitValues = {
 
-    function calculateTrade() {
+      "Rocket": 1,
+      "Spin": 2,
+      "Blade": 3,
+      "Spring": 4,
+      "Bomb": 5,
+      "Smoke": 6,
+      "Spike": 7,
 
-      const give =
-        Number(
-          document.getElementById("giveValue").value
-        );
+      "Flame": 10,
+      "Falcon": 11,
+      "Ice": 13,
+      "Sand": 14,
+      "Dark": 16,
+      "Diamond": 18,
+      "Light": 22,
+      "Rubber": 24,
+      "Barrier": 25,
+      "Ghost": 27,
+      "Magma": 30,
 
-      const receive =
-        Number(
-          document.getElementById("receiveValue").value
-        );
+      "Quake": 35,
+      "Buddha": 55,
+      "Love": 38,
+      "Spider": 42,
+      "Sound": 50,
+      "Phoenix": 60,
+      "Portal": 75,
+      "Rumble": 80,
+      "Pain": 65,
+      "Blizzard": 85,
+      "Gravity": 70,
+
+      "Mammoth": 95,
+      "T-Rex": 110,
+      "Dough": 135,
+      "Shadow": 100,
+      "Venom": 115,
+      "Control": 120,
+      "Spirit": 125,
+
+      "Leopard": 160,
+      "Yeti": 180,
+      "Kitsune": 220,
+      "Dragon": 260
+
+    };
+
+
+    function fillFruitSelectors() {
+
+      const selectors =
+        document.querySelectorAll(".trade-select");
+
+      const names =
+        Object.keys(fruitValues);
+
+
+      selectors.forEach(function (select) {
+
+        names.forEach(function (fruit) {
+
+          const option =
+            document.createElement("option");
+
+          option.value = fruit;
+          option.textContent = fruit;
+
+          select.appendChild(option);
+
+        });
+
+      });
+
+    }
+
+
+    fillFruitSelectors();
+
+
+    function calculateFruitTrade() {
+
+      const giveSelectors =
+        document.querySelectorAll(".give-fruit");
+
+      const receiveSelectors =
+        document.querySelectorAll(".receive-fruit");
+
+      let giveTotal = 0;
+      let receiveTotal = 0;
+
+      let giveNames = [];
+      let receiveNames = [];
+
+
+      giveSelectors.forEach(function (select) {
+
+        const fruit = select.value;
+
+        if (fruit) {
+
+          giveTotal += fruitValues[fruit];
+
+          giveNames.push(fruit);
+
+        }
+
+      });
+
+
+      receiveSelectors.forEach(function (select) {
+
+        const fruit = select.value;
+
+        if (fruit) {
+
+          receiveTotal += fruitValues[fruit];
+
+          receiveNames.push(fruit);
+
+        }
+
+      });
+
 
       const result =
         document.getElementById("tradeResult");
 
 
-      if (!give || !receive) {
+      if (
+        giveNames.length === 0 ||
+        receiveNames.length === 0
+      ) {
 
-        result.textContent =
-          "⚠️ Introduce los dos valores.";
+        result.innerHTML =
+          "⚠️ Elige al menos una fruta en cada lado.";
 
         return;
       }
 
 
-      if (receive > give) {
+      let message = "";
 
-        result.textContent =
-          "✅ WIN: recibes más valor del que das.";
 
-      } else if (receive < give) {
+      if (receiveTotal > giveTotal) {
 
-        result.textContent =
-          "❌ LOSE: estás dando más valor del que recibes.";
-
-      } else {
-
-        result.textContent =
-          "⚖️ FAIR: los dos valores son iguales.";
+        message =
+          "✅ WIN<br><br>" +
+          "Tú das: " +
+          giveNames.join(" + ") +
+          "<br>" +
+          "Tú recibes: " +
+          receiveNames.join(" + ") +
+          "<br><br>" +
+          "Parece un buen trade para ti.";
 
       }
+
+
+      else if (receiveTotal < giveTotal) {
+
+        message =
+          "❌ LOSE<br><br>" +
+          "Tú das: " +
+          giveNames.join(" + ") +
+          "<br>" +
+          "Tú recibes: " +
+          receiveNames.join(" + ") +
+          "<br><br>" +
+          "Estás dando más valor del que recibes.";
+
+      }
+
+
+      else {
+
+        message =
+          "⚖️ FAIR<br><br>" +
+          "Tú das: " +
+          giveNames.join(" + ") +
+          "<br>" +
+          "Tú recibes: " +
+          receiveNames.join(" + ") +
+          "<br><br>" +
+          "El intercambio está bastante equilibrado.";
+
+      }
+
+
+      result.innerHTML = message;
 
     }
 

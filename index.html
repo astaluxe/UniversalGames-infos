@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Games</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">🎮 Universal Games</div>
+
+  <input
+    id="searchInput"
+    class="search"
+    type="text"
+    placeholder="Busca un juego..."
+  >
+
+  <button class="login-btn">👤 Login</button>
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <div>
+      <p class="eyebrow">TU CENTRO GAMING</p>
+
+      <h1>Descubre tu próximo juego</h1>
+
+      <p class="subtitle">
+        Guías, herramientas, recomendaciones y juegos populares
+        en un solo sitio.
+      </p>
+
+      <button id="recommendBtn" class="primary-btn">
+        🎲 Recomiéndame un juego
+      </button>
+    </div>
+
+    <div class="hero-card">
+      <div class="controller">🕹️</div>
+
+      <p id="recommendationText">
+        Pulsa el botón y te recomendamos un juego.
+      </p>
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <div class="section-title-row">
+      <h2>🔥 Juegos populares</h2>
+      <span id="resultCount"></span>
+    </div>
+
+
+    <div id="gamesGrid" class="games-grid">
+
+
+      <article class="game-card" data-name="Minecraft">
+
+        <div class="game-icon">⛏️</div>
+
+        <h3>Minecraft</h3>
+
+        <p>
+          Seeds, mods, comandos y construcciones.
+        </p>
+
+        <button onclick="showGame('Minecraft')">
+          Ver juego
+        </button>
+
+      </article>
+
+
+      <article class="game-card" data-name="Blox Fruits">
+
+        <div class="game-icon">🍈</div>
+
+        <h3>Blox Fruits</h3>
+
+        <p>
+          Tier lists, frutas, trades y códigos.
+        </p>
+
+        <button onclick="showGame('Blox Fruits')">
+          Ver juego
+        </button>
+
+      </article>
+
+
+      <article class="game-card" data-name="Rocket League">
+
+        <div class="game-icon">🚗</div>
+
+        <h3>Rocket League</h3>
+
+        <p>
+          Rangos, entrenamiento y configuraciones.
+        </p>
+
+        <button onclick="showGame('Rocket League')">
+          Ver juego
+        </button>
+
+      </article>
+
+
+      <article class="game-card" data-name="Fortnite">
+
+        <div class="game-icon">🏹</div>
+
+        <h3>Fortnite</h3>
+
+        <p>
+          Consejos, mapas y novedades.
+        </p>
+
+        <button onclick="showGame('Fortnite')">
+          Ver juego
+        </button>
+
+      </article>
+
+
+      <article class="game-card" data-name="Roblox">
+
+        <div class="game-icon">🧱</div>
+
+        <h3>Roblox</h3>
+
+        <p>
+          Experiencias, trucos y recomendaciones.
+        </p>
+
+        <button onclick="showGame('Roblox')">
+          Ver juego
+        </button>
+
+      </article>
+
+
+      <article class="game-card" data-name="GTA V">
+
+        <div class="game-icon">🚓</div>
+
+        <h3>GTA V</h3>
+
+        <p>
+          Misiones, vehículos y guías.
+        </p>
+
+        <button onclick="showGame('GTA V')">
+          Ver juego
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="tools-section">
+
+    <h2>🧰 Herramientas</h2>
+
+   

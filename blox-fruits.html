@@ -2,4995 +2,1627 @@
 <html lang="es">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<title>
-Blox Fruits: Frutas, Tier List, Builds, Trades, Códigos y Guías | Universal Games
-</title>
-
-<meta
-  name="description"
-  content="Guía completa de Blox Fruits con frutas, tier list, trade calculator, códigos, builds, armas, Fighting Styles y consejos."
->
-
-<link rel="stylesheet" href="styles.css">
-
-<style>
-
-/* =========================
-   GENERAL
-========================= */
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-}
-
-.bf-container {
-  max-width: 1150px;
-  margin: auto;
-  padding: 25px 18px;
-}
-
-.back {
-  display: inline-block;
-  margin-bottom: 20px;
-  color: white;
-  text-decoration: none;
-}
-
-.bf-hero {
-  text-align: center;
-  padding: 45px 15px;
-}
-
-.bf-hero h1 {
-  font-size: clamp(42px, 8vw, 70px);
-  margin: 10px 0;
-}
-
-.bf-hero p {
-  max-width: 700px;
-  margin: 15px auto;
-  color: #b9bfd0;
-  line-height: 1.6;
-}
-
-.updated {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 14px;
-  border-radius: 25px;
-  background: rgba(98, 230, 151, 0.10);
-  border: 1px solid rgba(98, 230, 151, 0.25);
-  color: #82efad;
-  font-size: 13px;
-}
-
-
-/* =========================
-   MENÚ
-========================= */
-
-.menu-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(135px, 1fr));
-
-  gap: 12px;
-
-  margin:
-    25px 0
-    45px;
-
-}
-
-.menu-btn {
-
-  background:
-    linear-gradient(
-      135deg,
-      #7c5cff,
-      #3fa7ff
-    );
-
-  padding: 15px;
-
-  border-radius: 14px;
-
-  color: white;
-
-  text-decoration: none;
-
-  text-align: center;
-
-  font-weight: bold;
-
-}
-
-
-/* =========================
-   SECCIONES
-========================= */
-
-.section-box {
-
-  margin: 35px 0;
-
-  padding: 25px;
-
-  border-radius: 20px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.055
-    );
-
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.10
-    );
-
-}
-
-.section-box h2 {
-
-  margin-top: 0;
-
-  font-size: 28px;
-
-}
-
-.subtext {
-
-  color: #afb6c9;
-
-  line-height: 1.6;
-
-}
-
-.top-link {
-
-  display: inline-block;
-
-  margin-top: 16px;
-
-  color: #bcb0ff;
-
-  text-decoration: none;
-
-}
-
-
-/* =========================
-   BUSCADOR
-========================= */
-
-.fruit-search {
-
-  width: 100%;
-
-  padding: 14px;
-
-  box-sizing: border-box;
-
-  border-radius: 12px;
-
-  border: none;
-
-  margin:
-    15px 0
-    25px;
-
-  font-size: 16px;
-
-}
-
-
-/* =========================
-   DESPLEGABLES
-========================= */
-
-details {
-
-  margin: 12px 0;
-
-  border-radius: 16px;
-
-  background:
-    rgba(
-      124,
-      92,
-      255,
-      0.10
-    );
-
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.09
-    );
-
-  overflow: hidden;
-
-}
-
-details[open] {
-
-  background:
-    rgba(
-      124,
-      92,
-      255,
-      0.17
-    );
-
-  border-color:
-    rgba(
-      147,
-      115,
-      255,
-      0.40
-    );
-
-}
-
-summary {
-
-  cursor: pointer;
-
-  padding: 18px;
-
-  list-style: none;
-
-  font-size: 17px;
-
-  font-weight: bold;
-
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-
-  content: " ▼";
-
-  float: right;
-
-  opacity: 0.7;
-
-}
-
-details[open] summary::after {
-
-  content: " ▲";
-
-}
-
-.details-content {
-
-  padding:
-    0
-    18px
-    20px;
-
-  line-height: 1.65;
-
-  color: #d6d9e3;
-
-}
-
-
-/* =========================
-   STATS
-========================= */
-
-.stats {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(125px, 1fr)
-    );
-
-  gap: 10px;
-
-  margin: 15px 0;
-
-}
-
-.stat {
-
-  padding: 12px;
-
-  border-radius: 12px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.07
-    );
-
-}
-
-.good {
-
-  color: #78ee9f;
-
-  font-weight: bold;
-
-}
-
-.bad {
-
-  color: #ff9e9e;
-
-  font-weight: bold;
-
-}
-
-.tip {
-
-  margin-top: 14px;
-
-  padding: 13px;
-
-  border-radius: 9px;
-
-  border-left:
-    4px solid
-    #8966ff;
-
-  background:
-    rgba(
-      137,
-      102,
-      255,
-      0.08
-    );
-
-}
-
-
-/* =========================
-   TIER LIST
-========================= */
-
-.tier {
-
-  padding: 17px;
-
-  margin: 12px 0;
-
-  border-radius: 15px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.06
-    );
-
-}
-
-.tier-fruits {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 8px;
-
-  margin-top: 12px;
-
-}
-
-.tier-fruit {
-
-  padding:
-    8px
-    10px;
-
-  border-radius: 9px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.07
-    );
-
-  font-size: 13px;
-
-}
-
-
-/* =========================
-   TRADE CALCULATOR
-========================= */
-
-.trade-columns {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(240px, 1fr)
-    );
-
-  gap: 20px;
-
-  margin-top: 20px;
-
-}
-
-.trade-side {
-
-  padding: 20px;
-
-  border-radius: 16px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.06
-    );
-
-}
-
-.give-side {
-
-  border:
-    1px solid
-    rgba(
-      255,
-      110,
-      110,
-      0.18
-    );
-
-}
-
-.receive-side {
-
-  border:
-    1px solid
-    rgba(
-      101,
-      235,
-      160,
-      0.18
-    );
-
-}
-
-.trade-select {
-
-  width: 100%;
-
-  padding: 12px;
-
-  margin: 7px 0;
-
-  border-radius: 10px;
-
-  border: none;
-
-  font-size: 16px;
-
-}
-
-.trade-button {
-
-  width: 100%;
-
-  margin-top: 20px;
-
-  padding: 15px;
-
-  border: none;
-
-  border-radius: 12px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #7c5cff,
-      #3fa7ff
-    );
-
-  color: white;
-
-  font-size: 17px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-}
-
-.reset-button {
-
-  width: 100%;
-
-  margin-top: 10px;
-
-  padding: 12px;
-
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.12
-    );
-
-  border-radius: 12px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.05
-    );
-
-  color: white;
-
-  cursor: pointer;
-
-}
-
-.trade-result {
-
-  margin-top: 20px;
-
-  padding: 20px;
-
-  border-radius: 14px;
-
-  background:
-    rgba(
-      124,
-      92,
-      255,
-      0.15
-    );
-
-  text-align: center;
-
-  font-size: 18px;
-
-}
-
-
-/* =========================
-   CÓDIGOS
-========================= */
-
-.code-category {
-
-  margin-top: 28px;
-
-}
-
-.code-card {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content:
-    space-between;
-
-  gap: 12px;
-
-  padding: 14px;
-
-  margin: 9px 0;
-
-  border-radius: 13px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.065
-    );
-
-}
-
-.code-name {
-
-  font-family: monospace;
-
-  font-size: 15px;
-
-  font-weight: bold;
-
-  word-break: break-all;
-
-}
-
-.code-reward {
-
-  margin-top: 4px;
-
-  font-size: 13px;
-
-  color: #afb6c9;
-
-}
-
-.copy-button {
-
-  flex-shrink: 0;
-
-  padding:
-    9px
-    12px;
-
-  border: none;
-
-  border-radius: 9px;
-
-  background: #7656e8;
-
-  color: white;
-
-  cursor: pointer;
-
-}
-
-
-/* =========================
-   BUILDS / GUÍAS
-========================= */
-
-.steps {
-
-  padding-left: 22px;
-
-}
-
-.steps li {
-
-  margin: 8px 0;
-
-}
-
-.warning {
-
-  margin-top: 15px;
-
-  padding: 13px;
-
-  border-radius: 10px;
-
-  background:
-    rgba(
-      255,
-      196,
-      80,
-      0.08
-    );
-
-  border:
-    1px solid
-    rgba(
-      255,
-      196,
-      80,
-      0.20
-    );
-
-}
-
-
-/* =========================
-   MÓVIL
-========================= */
-
-@media(max-width: 520px) {
-
-  .section-box {
-
-    padding:
-      20px
-      14px;
-
-  }
-
-  .menu-grid {
-
-    grid-template-columns:
-      repeat(
-        2,
-        1fr
-      );
-
-  }
-
-  .code-card {
-
-    align-items:
-      flex-start;
-
-  }
-
-  .copy-button {
-
-    padding:
-      8px
-      9px;
-
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Blox Fruits: Frutas, Tier List, Trades, Builds y Guías | Universal Games
+  </title>
+
+  <meta
+    name="description"
+    content="Guía de Blox Fruits con fichas de frutas, tier list, calculadora de trades, builds, códigos y consejos."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .bf-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .bf-hero {
+      text-align: center;
+      padding: 45px 15px;
+    }
+
+    .bf-hero h1 {
+      font-size: 44px;
+      margin: 10px 0;
+    }
+
+    .bf-hero p {
+      font-size: 18px;
+      opacity: 0.85;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 25px 0 45px;
+    }
+
+    .menu-btn {
+      background: linear-gradient(135deg,#7c5cff,#3fa7ff);
+      padding: 15px;
+      border-radius: 14px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .section-box {
+      margin: 35px 0;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .section-box h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .fruit-search {
+      width: 100%;
+      padding: 14px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      border: none;
+      margin: 15px 0 25px;
+      font-size: 16px;
+    }
+
+    .fruit-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    details.fruit-card {
+      border-radius: 16px;
+      background: rgba(124,92,255,0.12);
+      border: 1px solid rgba(255,255,255,0.09);
+      overflow: hidden;
+    }
+
+    details.fruit-card[open] {
+      background: rgba(124,92,255,0.18);
+    }
+
+    .fruit-card summary {
+      cursor: pointer;
+      padding: 18px;
+      list-style: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .fruit-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .fruit-card summary::after {
+      content: " ▼";
+      float: right;
+      opacity: 0.75;
+    }
+
+    .fruit-card[open] summary::after {
+      content: " ▲";
+    }
+
+    .fruit-info {
+      padding: 0 18px 20px;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .stat {
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .good {
+      color: #74ef9a;
+      font-weight: bold;
+    }
+
+    .bad {
+      color: #ff9d9d;
+      font-weight: bold;
+    }
+
+    .tip {
+      padding: 14px;
+      border-left: 4px solid #8e6cff;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+
+    .tier {
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .trade-columns {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .trade-side {
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .trade-select {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .trade-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg,#7c5cff,#3fa7ff);
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .trade-result {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 14px;
+      background: rgba(124,92,255,0.15);
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .code-card,
+    .build-card,
+    .guide-card {
+      margin: 12px 0;
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: #bcb0ff;
+      text-decoration: none;
+    }
+
+  </style>
 </head>
 
 
 <body>
 
+  <header class="topbar" id="top">
+    <div class="logo">
+      🎮 Universal Games
+    </div>
+  </header>
 
-<header
-  class="topbar"
-  id="top"
->
 
-<div class="logo">
-🎮 Universal Games
-</div>
+  <main class="bf-container">
 
-</header>
+    <a class="back" href="index.html">
+      ← Volver a Universal Games
+    </a>
 
 
-<main class="bf-container">
+    <section class="bf-hero">
 
+      <div style="font-size:70px;">
+        🍎
+      </div>
 
-<a
-  class="back"
-  href="index.html"
->
-← Volver a Universal Games
-</a>
+      <h1>
+        Blox Fruits
+      </h1>
 
+      <p>
+        Guías detalladas de frutas, trades,
+        builds, PvP y progresión.
+      </p>
 
-<section class="bf-hero">
+    </section>
 
-<div style="font-size:72px">
-🍎
-</div>
 
-<h1>
-Blox Fruits
-</h1>
+    <nav class="menu-grid">
 
-<p>
-Frutas, Tier List, Trades,
-Códigos, Builds, armas,
-Fighting Styles y consejos
-en una sola guía.
-</p>
+      <a class="menu-btn" href="#frutas">
+        🍎 Frutas
+      </a>
 
-<span class="updated">
-⚡ Guía en desarrollo y actualización
-</span>
+      <a class="menu-btn" href="#tierlist">
+        🏆 Tier List
+      </a>
 
-</section>
+      <a class="menu-btn" href="#trades">
+        💱 Trades
+      </a>
 
+      <a class="menu-btn" href="#codigos">
+        🎁 Códigos
+      </a>
 
-<nav class="menu-grid">
+      <a class="menu-btn" href="#builds">
+        ⚔️ Builds
+      </a>
 
-<a
-  class="menu-btn"
-  href="#frutas"
->
-🍎 Frutas
-</a>
+      <a class="menu-btn" href="#guias">
+        📚 Guías
+      </a>
 
-<a
-  class="menu-btn"
-  href="#tierlist"
->
-🏆 Tier List
-</a>
+    </nav>
 
-<a
-  class="menu-btn"
-  href="#trades"
->
-💱 Trades
-</a>
 
-<a
-  class="menu-btn"
-  href="#codigos"
->
-🎁 Códigos
-</a>
+    <!-- FRUTAS -->
 
-<a
-  class="menu-btn"
-  href="#builds"
->
-⚔️ Builds
-</a>
+    <section class="section-box" id="frutas">
 
-<a
-  class="menu-btn"
-  href="#guias"
->
-📚 Guías
-</a>
+      <h2>
+        🍎 Guía de frutas
+      </h2>
 
-</nav>
+      <p>
+        Pulsa una fruta para abrir su ficha completa.
+      </p>
 
+      <input
+        id="fruitSearch"
+        class="fruit-search"
+        type="text"
+        placeholder="Buscar fruta..."
+      >
 
 
-<!-- =========================
-     FRUTAS
-========================= -->
+      <div class="fruit-list">
 
 
-<section
-  class="section-box"
-  id="frutas"
->
+        <!-- BUDDHA -->
 
-<h2>
-🍎 Guía de frutas
-</h2>
-
-<p class="subtext">
-Busca una fruta y pulsa sobre ella
-para desplegar su información completa.
-Al abrir una ficha, la anterior
-se cierra automáticamente.
-</p>
-
-
-<input
-
-  id="fruitSearch"
-
-  class="fruit-search"
-
-  type="text"
-
-  placeholder="Buscar Buddha, Dough, Portal..."
-
->
-
-
-<div id="fruitList"></div>
-
-
-<a
-  class="top-link"
-  href="#top"
->
-↑ Volver arriba
-</a>
-
-</section>
-
-
-
-<!-- =========================
-     TIER LIST
-========================= -->
-
-
-<section
-  class="section-box"
-  id="tierlist"
->
-
-<h2>
-🏆 Tier List
-</h2>
-
-<p class="subtext">
-Clasificación general teniendo en cuenta
-utilidad, grinding, PvP, PvE,
-movilidad y relación calidad/precio.
-No existe una tier list oficial,
-así que esta clasificación es orientativa.
-</p>
-
-
-<div
-  id="tierList"
-></div>
-
-
-<div class="warning">
-
-💡 Una fruta puede estar más abajo
-en la clasificación general y aun así
-ser excelente para un uso concreto.
-Por ejemplo, algunas son muchísimo
-mejores para grinding que para PvP.
-
-</div>
-
-
-<a
-  class="top-link"
-  href="#top"
->
-↑ Volver arriba
-</a>
-
-</section>
-
-
-
-<!-- =========================
-     TRADE CALCULATOR
-========================= -->
-
-
-<section
-  class="section-box"
-  id="trades"
->
-
-<h2>
-💱 Trade Calculator
-</h2>
-
-<p class="subtext">
-Selecciona hasta cuatro frutas
-que das y cuatro que recibes.
-Mantenemos el sistema WIN,
-FAIR y LOSE que ya teníamos.
-</p>
-
-
-<div class="trade-columns">
-
-
-<div
-  class="
-    trade-side
-    give-side
-  "
->
-
-<h3>
-📤 TÚ DAS
-</h3>
-
-<select
-  class="
-    trade-select
-    give-fruit
-  "
-></select>
-
-<select
-  class="
-    trade-select
-    give-fruit
-  "
-></select>
-
-<select
-  class="
-    trade-select
-    give-fruit
-  "
-></select>
-
-<select
-  class="
-    trade-select
-    give-fruit
-  "
-></select>
-
-</div>
-
-
-<div
-  class="
-    trade-side
-    receive-side
-  "
->
-
-<h3>
-📥 TÚ RECIBES
-</h3>
-
-<select
-  class="
-    trade-select
-    receive-fruit
-  "
-></select>
-
-<select
-  class="
-    trade-select
-    receive-fruit
-  "
-></select>
-
-<select
-  class="
-    trade-select
-    receive-fruit
-  "
-></select>
-
-<select
-  class="
-    trade-select
-    receive-fruit
-  "
-></select>
-
-</div>
-
-
-</div>
-
-
-<button
-
-  class="trade-button"
-
-  onclick="
-    calculateFruitTrade()
-  "
-
->
-
-💱 CALCULAR TRADE
-
-</button>
-
-
-<button
-
-  class="reset-button"
-
-  onclick="
-    resetTrade()
-  "
-
->
-
-↻ Limpiar trade
-
-</button>
-
-
-<div
-
-  id="tradeResult"
-
-  class="trade-result"
-
->
-
-Selecciona al menos
-una fruta en cada lado.
-
-</div>
-
-
-<p class="subtext">
-
-⚠️ El valor de trade
-no es un precio oficial.
-La demanda cambia,
-así que Universal Games
-lo presenta como una
-estimación orientativa.
-
-</p>
-
-
-<a
-  class="top-link"
-  href="#top"
->
-↑ Volver arriba
-</a>
-
-</section>
-
-
-
-<!-- =========================
-     CÓDIGOS
-========================= -->
-
-
-<section
-  class="section-box"
-  id="codigos"
->
-
-<h2>
-🎁 Códigos
-</h2>
-
-
-<p class="subtext">
-
-Los hemos separado por tipo
-para que sea más fácil encontrar
-lo que necesitas.
-Pulsa COPIAR para copiar un código.
-
-</p>
-
-
-<div class="code-category">
-
-<h3>
-⚡ 2x EXP
-</h3>
-
-<div id="xpCodes"></div>
-
-</div>
-
-
-<div class="code-category">
-
-<h3>
-🔄 Reset de estadísticas
-</h3>
-
-<div id="resetCodes"></div>
-
-</div>
-
-
-<div class="code-category">
-
-<h3>
-💰 Otras recompensas
-</h3>
-
-<div id="otherCodes"></div>
-
-</div>
-
-
-<details>
-
-<summary>
-❓ Cómo canjear un código
-</summary>
-
-<div class="details-content">
-
-<ol class="steps">
-
-<li>
-Entra a Blox Fruits.
-</li>
-
-<li>
-Abre la opción del juego
-para introducir códigos.
-</li>
-
-<li>
-Pulsa COPIAR en Universal Games.
-</li>
-
-<li>
-Pega el código exactamente.
-</li>
-
-<li>
-Pulsa Redeem.
-</li>
-
-</ol>
-
-<div class="tip">
-
-💡 Si un código deja de funcionar,
-puede haber caducado aunque anteriormente
-fuera válido.
-
-</div>
-
-</div>
-
-</details>
-
-
-<a
-  class="top-link"
-  href="#top"
->
-↑ Volver arriba
-</a>
-
-</section>
-
-
-
-<!-- =========================
-     BUILDS
-========================= -->
-
-
-<section
-  class="section-box"
-  id="builds"
->
-
-<h2>
-⚔️ Builds útiles
-</h2>
-
-<p class="subtext">
-
-Pulsa una build para ver
-fruta, Fighting Style,
-arma, stats, objetivo
-y consejos.
-
-</p>
-
-
-<div id="buildList"></div>
-
-
-<a
-  class="top-link"
-  href="#top"
->
-↑ Volver arriba
-</a>
-
-</section>
-
-
-
-<!-- =========================
-     GUÍAS
-========================= -->
-
-
-<section
-  class="section-box"
-  id="guias"
->
-
-<h2>
-📚 Guías rápidas
-</h2>
-
-<p class="subtext">
-
-Aquí iremos añadiendo
-armas, Fighting Styles,
-objetos y progresión.
-Todas las guías son desplegables.
-
-</p>
-
-
-<div id="guideList"></div>
-
-
-<details>
-
-<summary>
-💡 Consejos generales para progresar
-</summary>
-
-<div class="details-content">
-
-<ul class="steps">
-
-<li>
-No cambies continuamente
-de fruta mientras subes de nivel.
-</li>
-
-<li>
-Para grinding,
-prioriza comodidad
-y velocidad por encima
-del PvP.
-</li>
-
-<li>
-Guarda Fragments:
-los necesitarás
-para contenido avanzado.
-</li>
-
-<li>
-Si utilizas Buddha,
-un Fighting Style
-con buenos ataques M1
-puede ser muchísimo más útil
-que invertir todo
-en daño de fruta.
-</li>
-
-<li>
-Practica un combo corto
-antes de intentar aprender
-uno enorme.
-</li>
-
-<li>
-No cambies una fruta muy valiosa
-sin mirar primero
-la demanda del trade.
-</li>
-
-</ul>
-
-</div>
-
-</details>
-
-
-<a
-  class="top-link"
-  href="#top"
->
-↑ Volver arriba
-</a>
-
-</section>
-
-
-</main>
-
-
-
-<script>
-
-
-/* =========================================
-   DATOS DE FRUTAS
-========================================= */
-
-
-const fruits = [
-
-{
-
-name: "Rocket",
-
-emoji: "🚀",
-
-tier: "C",
-
-type: "Natural",
-
-rarity: "Common",
-
-best: "Inicio",
-
-grinding: 2,
-
-pvp: 1,
-
-raids: 1,
-
-difficulty: "Fácil",
-
-description:
-"Rocket es una fruta económica pensada principalmente para los primeros niveles. Sirve para aprender el funcionamiento básico de las habilidades de fruta, pero normalmente será sustituida rápidamente por opciones más fuertes.",
-
-strong:
-"Precio muy bajo y habilidades fáciles de entender.",
-
-weak:
-"Daño, movilidad y utilidad bastante limitados cuando avanzas.",
-
-tip:
-"Úsala solamente mientras no tengas una opción claramente mejor."
-
-},
-
-
-{
-
-name: "Spin",
-
-emoji: "🌀",
-
-tier: "D",
-
-type: "Natural",
-
-rarity: "Common",
-
-best: "Inicio",
-
-grinding: 1,
-
-pvp: 1,
-
-raids: 1,
-
-difficulty: "Fácil",
-
-description:
-"Spin es otra fruta de entrada. Puede ser divertida para comenzar, pero su utilidad general es reducida frente a casi cualquier fruta de mayor nivel.",
-
-strong:
-"Barata y sencilla.",
-
-weak:
-"Se queda corta rápidamente.",
-
-tip:
-"No gastes demasiados recursos intentando construir una build alrededor de ella."
-
-},
-
-
-{
-
-name: "Blade",
-
-emoji: "⚔️",
-
-tier: "C",
-
-type: "Natural",
-
-rarity: "Common",
-
-best: "Grinding inicial",
-
-grinding: 3,
-
-pvp: 2,
-
-raids: 2,
-
-difficulty: "Fácil",
-
-description:
-"Blade puede funcionar durante el inicio gracias a ataques cómodos y un estilo sencillo. Tiene más utilidad que muchas frutas Common.",
-
-strong:
-"Buena para aprender y progresar en los primeros niveles.",
-
-weak:
-"Pierde competitividad en contenido avanzado.",
-
-tip:
-"Puede servir mientras ahorras para Light, Ice, Flame u otra fruta más completa."
-
-},
-
-
-{
-
-name: "Spring",
-
-emoji: "🪀",
-
-tier: "D",
-
-type: "Natural",
-
-rarity: "Common",
-
-best: "Movilidad inicial",
-
-grinding: 1,
-
-pvp: 2,
-
-raids: 1,
-
-difficulty: "Fácil",
-
-description:
-"Spring apuesta más por movilidad y diversión que por eficiencia. Puede ser entretenida, aunque no suele ser una elección prioritaria para progresar.",
-
-strong:
-"Movilidad peculiar.",
-
-weak:
-"Rendimiento general bajo.",
-
-tip:
-"Es mejor como fruta para experimentar que como opción de progreso serio."
-
-},
-
-
-{
-
-name: "Bomb",
-
-emoji: "💣",
-
-tier: "C",
-
-type: "Natural",
-
-rarity: "Common",
-
-best: "Daño de área inicial",
-
-grinding: 3,
-
-pvp: 2,
-
-raids: 2,
-
-difficulty: "Fácil",
-
-description:
-"Bomb cuenta con ataques explosivos capaces de golpear grupos. Puede resultar útil durante los primeros niveles.",
-
-strong:
-"Ataques de área accesibles.",
-
-weak:
-"Más adelante existen opciones muchísimo más potentes.",
-
-tip:
-"Intenta agrupar enemigos antes de usar tus ataques."
-
-},
-
-
-{
-
-name: "Smoke",
-
-emoji: "💨",
-
-tier: "C",
-
-type: "Elemental",
-
-rarity: "Common",
-
-best: "First Sea",
-
-grinding: 3,
-
-pvp: 2,
-
-raids: 2,
-
-difficulty: "Fácil",
-
-description:
-"Smoke puede ser bastante cómoda al inicio gracias a sus características Elemental y a un kit sencillo.",
-
-strong:
-"Buena relación entre facilidad y precio.",
-
-weak:
-"No tiene el potencial de frutas Elemental superiores.",
-
-tip:
-"Una opción perfectamente válida mientras buscas Light, Ice o Flame."
-
-},
-
-
-{
-
-name: "Spike",
-
-emoji: "🌵",
-
-tier: "C",
-
-type: "Natural",
-
-rarity: "Common",
-
-best: "Primeros niveles",
-
-grinding: 2,
-
-pvp: 2,
-
-raids: 1,
-
-difficulty: "Fácil",
-
-description:
-"Spike permite atacar varios enemigos y tiene requisitos accesibles de mastery.",
-
-strong:
-"Fácil de utilizar.",
-
-weak:
-"Poco atractiva en mid y late game.",
-
-tip:
-"No invertiría demasiado tiempo de mastery si ya puedes conseguir algo mejor."
-
-},
-
-
-{
-
-name: "Flame",
-
-emoji: "🔥",
-
-tier: "B",
-
-type: "Elemental",
-
-rarity: "Uncommon",
-
-best: "Grinding y PvE económico",
-
-grinding: 4,
-
-pvp: 3,
-
-raids: 4,
-
-difficulty: "Fácil",
-
-description:
-"Flame ofrece mucho rendimiento por un coste relativamente bajo. Es cómoda para progresar y gana opciones adicionales cuando mejoras su potencial.",
-
-strong:
-"Buen daño de área y buena relación calidad-precio.",
-
-weak:
-"En PvP avanzado hay frutas con más control.",
-
-tip:
-"Una buena elección si quieres una fruta equilibrada sin gastar demasiado."
-
-},
-
-
-{
-
-name: "Ice",
-
-emoji: "🧊",
-
-tier: "A",
-
-type: "Elemental",
-
-rarity: "Uncommon",
-
-best: "Combos y PvP",
-
-grinding: 4,
-
-pvp: 5,
-
-raids: 3,
-
-difficulty: "Fácil",
-
-description:
-"Ice es excelente para aprender PvP gracias a sus stuns. También es cómoda durante la progresión y combina muy bien con espada o Fighting Style.",
-
-strong:
-"Stuns fáciles de aprovechar, control y buen precio.",
-
-weak:
-"Jugadores experimentados pueden anticipar algunos ataques.",
-
-tip:
-"Aprende un combo corto usando el stun como inicio."
-
-},
-
-
-{
-
-name: "Sand",
-
-emoji: "🏜️",
-
-tier: "B",
-
-type: "Elemental",
-
-rarity: "Uncommon",
-
-best: "PvP",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 3,
-
-difficulty: "Media",
-
-description:
-"Sand tiene un kit sólido y puede funcionar muy bien en combate cuando aprendes sus herramientas de control.",
-
-strong:
-"Buen control y utilidad Elemental.",
-
-weak:
-"Es menos cómoda que Light para movilidad y grinding.",
-
-tip:
-"Su valor aumenta bastante cuando la utilizas con intención de hacer combos."
-
-},
-
-
-{
-
-name: "Dark",
-
-emoji: "🌑",
-
-tier: "A",
-
-type: "Elemental",
-
-rarity: "Uncommon",
-
-best: "PvP y combos",
-
-grinding: 3,
-
-pvp: 5,
-
-raids: 3,
-
-difficulty: "Media",
-
-description:
-"Dark destaca por sus stuns y su enorme capacidad para iniciar combos. Es especialmente interesante para Sword Mains.",
-
-strong:
-"Control excelente y gran utilidad para combos.",
-
-weak:
-"No destaca tanto por movilidad o grinding.",
-
-tip:
-"Utilízala como herramienta para atrapar al rival y dejar que tu espada haga el resto."
-
-},
-
-
-{
-
-name: "Light",
-
-emoji: "✨",
-
-tier: "A",
-
-type: "Elemental",
-
-rarity: "Rare",
-
-best: "First Sea",
-
-grinding: 5,
-
-pvp: 3,
-
-raids: 3,
-
-difficulty: "Fácil",
-
-description:
-"Light es una de las frutas más cómodas para First Sea. Su velocidad de desplazamiento y sus ataques permiten completar misiones con mucha eficiencia.",
-
-strong:
-"Movilidad excelente, buena para grinding y fácil de usar.",
-
-weak:
-"En PvP avanzado hay opciones más completas.",
-
-tip:
-"Si estás empezando, no tengas prisa por sustituirla si te está funcionando bien."
-
-},
-
-
-{
-
-name: "Rubber",
-
-emoji: "🧤",
-
-tier: "B",
-
-type: "Natural",
-
-rarity: "Rare",
-
-best: "PvP",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 3,
-
-difficulty: "Media",
-
-description:
-"Rubber ofrece un estilo de combate muy particular y puede ser divertida en PvP cuando aprendes a utilizar su alcance.",
-
-strong:
-"Buen potencial ofensivo en manos experimentadas.",
-
-weak:
-"Menos cómoda que otras frutas para progresión pura.",
-
-tip:
-"Practica el alcance real de cada habilidad antes de entrar en PvP."
-
-},
-
-
-{
-
-name: "Ghost",
-
-emoji: "👻",
-
-tier: "A",
-
-type: "Natural",
-
-rarity: "Rare",
-
-best: "Supervivencia y PvP",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 3,
-
-difficulty: "Media",
-
-description:
-"Ghost destaca por mecánicas de supervivencia y herramientas útiles para sorprender al enemigo.",
-
-strong:
-"Buena utilidad y mecánicas especiales.",
-
-weak:
-"Necesita algo más de conocimiento que una fruta de grinding sencilla.",
-
-tip:
-"Aprovecha sus herramientas defensivas en lugar de buscar solamente daño."
-
-},
-
-
-{
-
-name: "Magma",
-
-emoji: "🌋",
-
-tier: "A",
-
-type: "Elemental",
-
-rarity: "Rare",
-
-best: "Sea Events y PvE",
-
-grinding: 5,
-
-pvp: 3,
-
-raids: 5,
-
-difficulty: "Fácil-Media",
-
-description:
-"Magma es una de las mejores frutas para hacer daño a objetivos grandes. Funciona especialmente bien en actividades PvE y Sea Events.",
-
-strong:
-"Muchísimo daño sostenido y grandes áreas.",
-
-weak:
-"Su movilidad no es tan cómoda como Light o Portal.",
-
-tip:
-"Contra enemigos grandes intenta mantenerlos dentro de tus zonas de daño."
-
-},
-
-
-{
-
-name: "Quake",
-
-emoji: "🌊",
-
-tier: "B",
-
-type: "Natural",
-
-rarity: "Legendary",
-
-best: "AoE",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Quake destaca por ataques de gran área y capacidad para presionar grupos de enemigos.",
-
-strong:
-"Hitboxes amplias y daño considerable.",
-
-weak:
-"Puede sentirse lenta frente a frutas muy móviles.",
-
-tip:
-"Es mejor cuando puedes anticipar el movimiento del rival."
-
-},
-
-
-{
-
-name: "Buddha",
-
-emoji: "🟡",
-
-tier: "S",
-
-type: "Beast",
-
-rarity: "Legendary",
-
-best: "Grinding, raids y mastery",
-
-grinding: 5,
-
-pvp: 3,
-
-raids: 5,
-
-difficulty: "Fácil",
-
-description:
-"Buddha es una de las grandes referencias para grinding. Su transformación facilita enormemente el combate cuerpo a cuerpo y permite atacar grupos con mucha comodidad.",
-
-strong:
-"Grinding excelente, buena supervivencia y fantástica para mastery.",
-
-weak:
-"No ofrece la misma variedad ofensiva que algunas frutas centradas en PvP.",
-
-tip:
-"Combínala con un Fighting Style de M1 rápidos. No necesitas depender del daño de fruta para aprovechar Buddha."
-
-},
-
-
-{
-
-name: "Love",
-
-emoji: "💗",
-
-tier: "C",
-
-type: "Natural",
-
-rarity: "Legendary",
-
-best: "Utilidad",
-
-grinding: 3,
-
-pvp: 3,
-
-raids: 3,
-
-difficulty: "Media",
-
-description:
-"Love tiene varias mecánicas curiosas y puede resultar divertida, aunque suele existir una alternativa más eficiente para cada objetivo concreto.",
-
-strong:
-"Versatilidad y habilidades peculiares.",
-
-weak:
-"No domina una categoría concreta.",
-
-tip:
-"Buena para jugar por diversión, no necesariamente para optimizar progreso."
-
-},
-
-
-{
-
-name: "Spider",
-
-emoji: "🕷️",
-
-tier: "B",
-
-type: "Natural",
-
-rarity: "Legendary",
-
-best: "PvP",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 3,
-
-difficulty: "Media-Alta",
-
-description:
-"Spider está más orientada al combate jugador contra jugador. Puede ofrecer bastante presión si conectas correctamente sus movimientos.",
-
-strong:
-"Buen potencial de PvP.",
-
-weak:
-"Requiere precisión.",
-
-tip:
-"No lances habilidades al azar: espera a tener una apertura."
-
-},
-
-
-{
-
-name: "Sound",
-
-emoji: "🎵",
-
-tier: "B",
-
-type: "Natural",
-
-rarity: "Legendary",
-
-best: "Uso general",
-
-grinding: 4,
-
-pvp: 4,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Sound es una fruta equilibrada con buenos ataques de área y rendimiento razonable en muchas actividades.",
-
-strong:
-"Versátil y útil en varias situaciones.",
-
-weak:
-"No siempre es la número uno en una categoría concreta.",
-
-tip:
-"Buena opción si no quieres cambiar continuamente de fruta."
-
-},
-
-
-{
-
-name: "Phoenix",
-
-emoji: "🔥",
-
-tier: "A",
-
-type: "Beast",
-
-rarity: "Legendary",
-
-best: "Supervivencia",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Phoenix combina movilidad, recuperación y combate. Es una fruta muy completa cuando sabes administrar correctamente sus recursos.",
-
-strong:
-"Curación, movilidad y utilidad.",
-
-weak:
-"Puede consumir bastante energía.",
-
-tip:
-"No malgastes la recuperación cuando todavía no la necesitas."
-
-},
-
-
-{
-
-name: "Portal",
-
-emoji: "🌀",
-
-tier: "S",
-
-type: "Natural",
-
-rarity: "Legendary",
-
-best: "Movilidad y Sword PvP",
-
-grinding: 3,
-
-pvp: 5,
-
-raids: 3,
-
-difficulty: "Media-Alta",
-
-description:
-"Portal es extraordinaria para movilidad y control del posicionamiento. Es una de las favoritas de muchos Sword Mains.",
-
-strong:
-"Movilidad espectacular y gran utilidad para iniciar o escapar de combates.",
-
-weak:
-"Su mayor fuerza no está en hacer daño bruto directamente.",
-
-tip:
-"Piensa en Portal como una herramienta para colocar al rival donde tú quieres."
-
-},
-
-
-{
-
-name: "Rumble",
-
-emoji: "⚡",
-
-tier: "S",
-
-type: "Elemental",
-
-rarity: "Legendary",
-
-best: "PvP y stun",
-
-grinding: 4,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Rumble destaca por sus stuns, movilidad y capacidad para crear oportunidades de combo.",
-
-strong:
-"Control, presión y excelente sinergia con espadas.",
-
-weak:
-"Necesita práctica para aprovechar sus ventanas correctamente.",
-
-tip:
-"Usa los stuns para preparar ataques de tu espada o Fighting Style."
-
-},
-
-
-{
-
-name: "Pain",
-
-emoji: "🔮",
-
-tier: "B",
-
-type: "Natural",
-
-rarity: "Legendary",
-
-best: "PvP técnico",
-
-grinding: 2,
-
-pvp: 4,
-
-raids: 2,
-
-difficulty: "Alta",
-
-description:
-"Pain puede ser poderosa, pero requiere más práctica que muchas alternativas.",
-
-strong:
-"Buen potencial en manos experimentadas.",
-
-weak:
-"Difícil de dominar y poco cómoda para grinding.",
-
-tip:
-"No es la mejor fruta para un jugador que todavía está aprendiendo."
-
-},
-
-
-{
-
-name: "Blizzard",
-
-emoji: "❄️",
-
-tier: "A",
-
-type: "Elemental",
-
-rarity: "Legendary",
-
-best: "All-round",
-
-grinding: 5,
-
-pvp: 4,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Blizzard combina daño de área, control y buena progresión. Puede funcionar casi en cualquier actividad.",
-
-strong:
-"Excelente equilibrio entre PvE y PvP.",
-
-weak:
-"No tiene la movilidad extrema de Portal.",
-
-tip:
-"Aprovecha las zonas de daño para limitar el movimiento del rival."
-
-},
-
-
-{
-
-name: "Gravity",
-
-emoji: "🌌",
-
-tier: "B",
-
-type: "Natural",
-
-rarity: "Mythical",
-
-best: "Control de área",
-
-grinding: 3,
-
-pvp: 4,
-
-raids: 3,
-
-difficulty: "Alta",
-
-description:
-"Gravity se centra en grandes áreas y control. Puede resultar muy peligrosa cuando anticipas correctamente dónde estará el enemigo.",
-
-strong:
-"Control y grandes hitboxes.",
-
-weak:
-"Puede resultar difícil acertar contra jugadores muy móviles.",
-
-tip:
-"No persigas al enemigo; intenta obligarlo a entrar en tus zonas."
-
-},
-
-
-{
-
-name: "Mammoth",
-
-emoji: "🦣",
-
-tier: "A",
-
-type: "Beast",
-
-rarity: "Mythical",
-
-best: "Tank y PvE",
-
-grinding: 4,
-
-pvp: 4,
-
-raids: 5,
-
-difficulty: "Media",
-
-description:
-"Mammoth es una Beast robusta, capaz de resistir bastante y presionar objetivos grandes.",
-
-strong:
-"Resistencia, transformación y buenas áreas.",
-
-weak:
-"Es menos ágil que otras frutas Mythical.",
-
-tip:
-"Excelente si prefieres aguantar y presionar en lugar de depender de movimientos rápidos."
-
-},
-
-
-{
-
-name: "T-Rex",
-
-emoji: "🦖",
-
-tier: "A",
-
-type: "Beast",
-
-rarity: "Mythical",
-
-best: "PvP agresivo",
-
-grinding: 4,
-
-pvp: 4,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"T-Rex favorece un estilo agresivo con transformación y ataques fuertes.",
-
-strong:
-"Presión, transformación y buen daño.",
-
-weak:
-"Puede requerir práctica para aprovechar bien cada habilidad.",
-
-tip:
-"Intenta mantener la presión cuando el rival ya ha gastado sus opciones de escape."
-
-},
-
-
-{
-
-name: "Dough",
-
-emoji: "🍩",
-
-tier: "S",
-
-type: "Elemental",
-
-rarity: "Mythical",
-
-best: "PvP y combos",
-
-grinding: 4,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Dough es famosa por sus combos y stuns. Cuando está bien desarrollada puede mantener al rival atrapado durante largas secuencias.",
-
-strong:
-"Combos, control y presión.",
-
-weak:
-"Necesitas aprender bien el orden y timing de las habilidades.",
-
-tip:
-"Practica primero un combo fiable en lugar de intentar memorizar uno gigantesco."
-
-},
-
-
-{
-
-name: "Shadow",
-
-emoji: "🌑",
-
-tier: "A",
-
-type: "Natural",
-
-rarity: "Mythical",
-
-best: "PvP",
-
-grinding: 3,
-
-pvp: 5,
-
-raids: 3,
-
-difficulty: "Alta",
-
-description:
-"Shadow tiene muchas herramientas útiles para PvP y recompensa bastante a jugadores con experiencia.",
-
-strong:
-"Presión, movilidad y opciones ofensivas.",
-
-weak:
-"Más difícil de aprovechar que otras frutas.",
-
-tip:
-"Necesita paciencia; no gastes todas las habilidades nada más empezar."
-
-},
-
-
-{
-
-name: "Venom",
-
-emoji: "☠️",
-
-tier: "S",
-
-type: "Natural",
-
-rarity: "Mythical",
-
-best: "Daño continuo",
-
-grinding: 5,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Venom puede mantener presión continua mediante veneno y daño prolongado.",
-
-strong:
-"Daño constante, buena transformación y gran rendimiento general.",
-
-weak:
-"Puede ser más difícil de conseguir que opciones económicas.",
-
-tip:
-"Obliga al enemigo a permanecer cerca de tus zonas peligrosas."
-
-},
-
-
-{
-
-name: "Control",
-
-emoji: "🔵",
-
-tier: "S",
-
-type: "Natural",
-
-rarity: "Mythical",
-
-best: "PvP técnico",
-
-grinding: 3,
-
-pvp: 5,
-
-raids: 3,
-
-difficulty: "Alta",
-
-description:
-"Control es una fruta muy técnica que recompensa precisión y conocimiento del combate.",
-
-strong:
-"Control del espacio y enorme potencial para jugadores expertos.",
-
-weak:
-"Curva de aprendizaje elevada.",
-
-tip:
-"Aprende a jugar alrededor de tu zona de control antes de intentar combos complejos."
-
-},
-
-
-{
-
-name: "Spirit",
-
-emoji: "👻",
-
-tier: "A",
-
-type: "Natural",
-
-rarity: "Mythical",
-
-best: "PvP y versatilidad",
-
-grinding: 4,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Alta",
-
-description:
-"Spirit combina ataques fuertes, invocaciones y herramientas de apoyo.",
-
-strong:
-"Muchísimas opciones dentro de un solo kit.",
-
-weak:
-"Requiere práctica y mastery.",
-
-tip:
-"Aprovecha sus herramientas de apoyo; no la juegues como una fruta de daño simple."
-
-},
-
-
-{
-
-name: "Leopard",
-
-emoji: "🐆",
-
-tier: "S",
-
-type: "Beast",
-
-rarity: "Mythical",
-
-best: "PvP agresivo",
-
-grinding: 4,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Leopard destaca por velocidad, transformación y capacidad de ejercer presión constante.",
-
-strong:
-"Rápida, agresiva y difícil de ignorar.",
-
-weak:
-"Su valor puede ser elevado para alguien que todavía está progresando.",
-
-tip:
-"Aprovecha la movilidad para decidir cuándo entrar y salir del combate."
-
-},
-
-
-{
-
-name: "Yeti",
-
-emoji: "❄️",
-
-tier: "S",
-
-type: "Beast",
-
-rarity: "Mythical",
-
-best: "PvP y transformación",
-
-grinding: 4,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Yeti combina transformación, presión y buen rendimiento general.",
-
-strong:
-"Potente y versátil en combate.",
-
-weak:
-"Necesitas aprender cuándo transformar y cuándo guardar habilidades.",
-
-tip:
-"No uses todo tu kit de golpe si el rival todavía puede escapar."
-
-},
-
-
-{
-
-name: "Kitsune",
-
-emoji: "🦊",
-
-tier: "S",
-
-type: "Beast",
-
-rarity: "Mythical",
-
-best: "Movilidad y uso general",
-
-grinding: 5,
-
-pvp: 5,
-
-raids: 4,
-
-difficulty: "Media",
-
-description:
-"Kitsune combina velocidad, movilidad y una enorme versatilidad. Es capaz de rendir bien tanto en progresión como en combate.",
-
-strong:
-"Velocidad, movilidad y gran rendimiento general.",
-
-weak:
-"Es una fruta muy valiosa y no siempre compensa comerla si tu objetivo es tradear.",
-
-tip:
-"Aprovecha tu velocidad para escoger cuándo luchar, no solamente para perseguir."
-
-},
-
-
-{
-
-name: "Dragon",
-
-emoji: "🐉",
-
-tier: "S",
-
-type: "Beast",
-
-rarity: "Mythical",
-
-best: "PvP, PvE y valor",
-
-grinding: 5,
-
-pvp: 5,
-
-raids: 5,
-
-difficulty: "Media-Alta",
-
-description:
-"Dragon es una fruta de altísimo nivel con transformación, presión y gran presencia en combate.",
-
-strong:
-"Potencia, transformación, alcance y rendimiento general.",
-
-weak:
-"Es extremadamente valiosa y puede no ser la mejor elección para un jugador que solo quiere progresar niveles.",
-
-tip:
-"Antes de comer una fruta tan valiosa, decide si realmente prefieres utilizarla o conservarla para trades."
-
-}
-
-];
-
-
-
-/* =========================================
-   MOSTRAR FRUTAS
-========================================= */
-
-
-function stars(number) {
-
-  return "⭐".repeat(number);
-
-}
-
-
-function renderFruits(filter = "") {
-
-  const list =
-    document.getElementById(
-      "fruitList"
-    );
-
-  list.innerHTML = "";
-
-  const text =
-    filter
-      .toLowerCase()
-      .trim();
-
-
-  fruits
-
-    .filter(
-      fruit =>
-        fruit.name
-          .toLowerCase()
-          .includes(text)
-    )
-
-    .forEach(
-      fruit => {
-
-        const card =
-          document.createElement(
-            "details"
-          );
-
-        card.className =
-          "fruit-card";
-
-        card.dataset.fruit =
-          fruit.name;
-
-
-        card.innerHTML = `
+        <details class="fruit-card" data-fruit="Buddha">
 
           <summary>
-
-            ${fruit.emoji}
-            ${fruit.name}
-
-            · Tier
-            ${fruit.tier}
-
+            🟡 Buddha — excelente para progresar
           </summary>
 
-
-          <div class="details-content">
-
+          <div class="fruit-info">
 
             <p>
-              ${fruit.description}
+              Buddha es una de las frutas más populares
+              para grinding, raids y progresión. Su gran
+              ventaja es que facilita muchísimo el combate
+              cuerpo a cuerpo y permite enfrentarse a grupos
+              de enemigos con más comodidad.
             </p>
-
 
             <div class="stats">
 
-
               <div class="stat">
-
-                📈 Grinding
-
-                <br>
-
-                ${stars(
-                  fruit.grinding
-                )}
-
+                📈 Grinding<br>
+                ⭐⭐⭐⭐⭐
               </div>
 
-
               <div class="stat">
-
-                ⚔️ PvP
-
-                <br>
-
-                ${stars(
-                  fruit.pvp
-                )}
-
+                ⚔️ PvP<br>
+                ⭐⭐⭐
               </div>
 
-
               <div class="stat">
-
-                🏰 Raids / PvE
-
-                <br>
-
-                ${stars(
-                  fruit.raids
-                )}
-
+                🏰 Raids<br>
+                ⭐⭐⭐⭐⭐
               </div>
 
-
               <div class="stat">
-
-                🎮 Dificultad
-
-                <br>
-
-                <strong>
-                  ${fruit.difficulty}
-                </strong>
-
+                🎮 Dificultad<br>
+                Fácil
               </div>
-
-
-              <div class="stat">
-
-                🧬 Tipo
-
-                <br>
-
-                <strong>
-                  ${fruit.type}
-                </strong>
-
-              </div>
-
-
-              <div class="stat">
-
-                💎 Rareza
-
-                <br>
-
-                <strong>
-                  ${fruit.rarity}
-                </strong>
-
-              </div>
-
 
             </div>
-
-
-            <p>
-
-              <strong>
-                🎯 Mejor para:
-              </strong>
-
-              ${fruit.best}
-
-            </p>
-
 
             <p class="good">
-
               ✅ Puntos fuertes
-
             </p>
-
 
             <p>
-
-              ${fruit.strong}
-
+              Muy buena para subir de nivel,
+              farming, raids y combate cuerpo a cuerpo.
+              Es especialmente cómoda para jugadores
+              que quieren progresar rápido.
             </p>
-
 
             <p class="bad">
-
               ❌ Puntos débiles
-
             </p>
-
 
             <p>
-
-              ${fruit.weak}
-
+              No siempre ofrece la misma presión
+              o variedad que otras frutas especializadas
+              en PvP.
             </p>
 
+            <div class="tip">
+              💡 Consejo: funciona especialmente bien
+              si construyes tu personaje alrededor
+              de Fighting Style o espada.
+            </div>
+
+          </div>
+
+        </details>
+
+
+        <!-- PORTAL -->
+
+        <details class="fruit-card" data-fruit="Portal">
+
+          <summary>
+            🌀 Portal — movilidad espectacular
+          </summary>
+
+          <div class="fruit-info">
+
+            <p>
+              Portal destaca por su movilidad y utilidad.
+              Es una fruta muy interesante para jugadores
+              que quieren desplazarse rápidamente,
+              entrar y salir de combates y aprovechar
+              el posicionamiento.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media-Alta
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Movilidad, posicionamiento,
+              utilidad y capacidad para sorprender
+              al rival.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              Necesita práctica y conocimiento
+              de combos para aprovecharla de verdad.
+            </p>
 
             <div class="tip">
-
-              💡
-              ${fruit.tip}
-
+              💡 Consejo: no la valores solamente por daño.
+              Su verdadera fuerza está en controlar
+              dónde ocurre el combate.
             </div>
-
 
           </div>
 
-        `;
+        </details>
 
 
-        list.appendChild(card);
+        <!-- DOUGH -->
 
-      }
+        <details class="fruit-card" data-fruit="Dough">
 
-    );
+          <summary>
+            🍩 Dough — combos y PvP
+          </summary>
 
+          <div class="fruit-info">
 
-  activateSingleOpen();
+            <p>
+              Dough es conocida por su capacidad
+              para realizar combos potentes y controlar
+              al rival. Es especialmente popular
+              entre jugadores interesados en PvP.
+            </p>
 
-}
+            <div class="stats">
 
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
 
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐⭐
+              </div>
 
-document
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
 
-  .getElementById(
-    "fruitSearch"
-  )
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media
+              </div>
 
-  .addEventListener(
+            </div>
 
-    "input",
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
 
-    function () {
+            <p>
+              Combos, control, daño y capacidad
+              para mantener presión sobre el enemigo.
+            </p>
 
-      renderFruits(
-        this.value
-      );
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
 
-    }
+            <p>
+              Requiere aprender bien las habilidades
+              y el orden de los combos.
+            </p>
 
-  );
+            <div class="tip">
+              💡 Consejo: practicar el timing de las
+              habilidades marca mucha diferencia.
+            </div>
 
+          </div>
 
-renderFruits();
+        </details>
 
 
+        <!-- KITSUNE -->
 
-/* =========================================
-   SOLO UNA FRUTA ABIERTA
-========================================= */
+        <details class="fruit-card" data-fruit="Kitsune">
 
+          <summary>
+            🦊 Kitsune — velocidad y versatilidad
+          </summary>
 
-function activateSingleOpen() {
+          <div class="fruit-info">
 
-  const cards =
-    document.querySelectorAll(
-      ".fruit-card"
-    );
+            <p>
+              Kitsune es una fruta muy versátil,
+              conocida por combinar velocidad,
+              movilidad y ataques fuertes.
+            </p>
 
+            <div class="stats">
 
-  cards.forEach(
-    card => {
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
 
-      card.addEventListener(
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐⭐
+              </div>
 
-        "toggle",
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
 
-        function () {
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media
+              </div>
 
-          if (!card.open) {
-            return;
-          }
+            </div>
 
-          cards.forEach(
-            other => {
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
 
-              if (
-                other !== card
-              ) {
+            <p>
+              Movilidad, velocidad,
+              presión constante y buena versatilidad.
+            </p>
 
-                other.open =
-                  false;
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
 
-              }
+            <p>
+              Conseguirla puede ser complicado
+              y sacar todo su potencial requiere práctica.
+            </p>
 
-            }
-          );
+            <div class="tip">
+              💡 Consejo: aprovecha su movilidad
+              para atacar y reposicionarte continuamente.
+            </div>
 
-        }
+          </div>
 
-      );
+        </details>
 
-    }
 
-  );
+        <!-- DRAGON -->
 
-}
+        <details class="fruit-card" data-fruit="Dragon">
 
+          <summary>
+            🐉 Dragon — potencia y transformación
+          </summary>
 
+          <div class="fruit-info">
 
-/* =========================================
-   TIER LIST
-========================================= */
+            <p>
+              Dragon está orientada a jugadores
+              que buscan una fruta potente,
+              espectacular y capaz de ejercer
+              mucha presión durante el combate.
+            </p>
 
+            <div class="stats">
 
-function renderTierList() {
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
 
-  const container =
-    document.getElementById(
-      "tierList"
-    );
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐⭐
+              </div>
 
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
 
-  const descriptions = {
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media-Alta
+              </div>
 
-    S:
-      "Las frutas más fuertes o útiles en una o varias áreas importantes.",
+            </div>
 
-    A:
-      "Excelentes opciones que rinden muy bien en la mayoría de situaciones.",
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
 
-    B:
-      "Buenas frutas, especialmente cuando se utilizan para su función concreta.",
+            <p>
+              Gran potencia,
+              transformación,
+              alcance y presión.
+            </p>
 
-    C:
-      "Útiles al comenzar o en situaciones específicas.",
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
 
-    D:
-      "Normalmente existen alternativas mejores."
+            <p>
+              No es la fruta más sencilla
+              para un jugador nuevo.
+            </p>
 
-  };
+            <div class="tip">
+              💡 Consejo: aprende cuándo transformar
+              y cuándo guardar tus habilidades.
+            </div>
 
+          </div>
 
-  [
-    "S",
-    "A",
-    "B",
-    "C",
-    "D"
-  ]
+        </details>
 
-  .forEach(
-    tier => {
 
-      const tierFruits =
-        fruits.filter(
-          fruit =>
-            fruit.tier ===
-            tier
-        );
+        <!-- LIGHT -->
 
+        <details class="fruit-card" data-fruit="Light">
 
-      const div =
-        document.createElement(
-          "div"
-        );
+          <summary>
+            ✨ Light — excelente para principiantes
+          </summary>
 
+          <div class="fruit-info">
 
-      div.className =
-        "tier";
+            <p>
+              Light es una de las frutas más cómodas
+              para progresar durante buena parte
+              del juego gracias a su movilidad
+              y facilidad de uso.
+            </p>
 
+            <div class="stats">
 
-      div.innerHTML = `
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Fácil
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Movilidad rápida,
+              facilidad de uso
+              y muy buena progresión.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              En PvP avanzado hay frutas
+              con más opciones de combos y control.
+            </p>
+
+            <div class="tip">
+              💡 Consejo: es una gran elección
+              durante los primeros tramos del juego.
+            </div>
+
+          </div>
+
+        </details>
+
+
+        <!-- MAGMA -->
+
+        <details class="fruit-card" data-fruit="Magma">
+
+          <summary>
+            🌋 Magma — daño y farming
+          </summary>
+
+          <div class="fruit-info">
+
+            <p>
+              Magma destaca por su daño
+              y por ser muy útil para enfrentarse
+              a enemigos y determinadas actividades
+              de farming.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Fácil-Media
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Mucho daño,
+              áreas amplias y buena utilidad
+              para progresar.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              Su movilidad no es tan cómoda
+              como la de otras frutas.
+            </p>
+
+          </div>
+
+        </details>
+
+
+        <!-- ICE -->
+
+        <details class="fruit-card" data-fruit="Ice">
+
+          <summary>
+            🧊 Ice — control sencillo y efectivo
+          </summary>
+
+          <div class="fruit-info">
+
+            <p>
+              Ice combina control,
+              ataques fáciles de entender
+              y buena utilidad para aprender
+              mecánicas de combate.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Fácil
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Control, facilidad de uso
+              y buenas oportunidades de combo.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              Jugadores experimentados
+              pueden predecir algunas acciones.
+            </p>
+
+          </div>
+
+        </details>
+
+
+        <!-- RUMBLE -->
+
+        <details class="fruit-card" data-fruit="Rumble">
+
+          <summary>
+            ⚡ Rumble — control y PvP
+          </summary>
+
+          <div class="fruit-info">
+
+            <p>
+              Rumble es una fruta muy interesante
+              para PvP gracias a su capacidad
+              de controlar al rival y crear
+              oportunidades para combos.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Control,
+              combos y buena presión.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              Necesita práctica
+              para aprovechar bien sus aperturas.
+            </p>
+
+          </div>
+
+        </details>
+
+
+        <!-- VENOM -->
+
+        <details class="fruit-card" data-fruit="Venom">
+
+          <summary>
+            ☠️ Venom — presión y daño continuo
+          </summary>
+
+          <div class="fruit-info">
+
+            <p>
+              Venom destaca por aplicar
+              presión constante y daño continuo.
+              Puede resultar muy incómoda
+              para los rivales.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Daño constante,
+              presión y buen rendimiento general.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              No es tan sencilla de conseguir
+              como frutas más comunes.
+            </p>
+
+          </div>
+
+        </details>
+
+
+        <!-- T-REX -->
+
+        <details class="fruit-card" data-fruit="T-Rex">
+
+          <summary>
+            🦖 T-Rex — combate agresivo
+          </summary>
+
+          <div class="fruit-info">
+
+            <p>
+              T-Rex está orientada a un estilo
+              agresivo y de transformación,
+              con ataques fuertes y buena presencia
+              durante el combate.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                📈 Grinding<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                ⚔️ PvP<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🏰 Raids<br>
+                ⭐⭐⭐⭐
+              </div>
+
+              <div class="stat">
+                🎮 Dificultad<br>
+                Media
+              </div>
+
+            </div>
+
+            <p class="good">
+              ✅ Puntos fuertes
+            </p>
+
+            <p>
+              Potencia,
+              transformación y presión.
+            </p>
+
+            <p class="bad">
+              ❌ Puntos débiles
+            </p>
+
+            <p>
+              Puede requerir práctica
+              para aprovechar bien su movilidad.
+            </p>
+
+          </div>
+
+        </details>
+
+
+      </div>
+
+      <a class="top-link" href="#top">
+        ↑ Volver arriba
+      </a>
+
+    </section>
+
+
+    <!-- TIER LIST -->
+
+    <section class="section-box" id="tierlist">
+
+      <h2>
+        🏆 Tier List
+      </h2>
+
+      <p>
+        Esta clasificación es orientativa.
+        El rendimiento depende del modo de juego,
+        habilidad del jugador y cambios de balance.
+      </p>
+
+      <div class="tier">
+        <strong>⭐ S Tier</strong>
+        <p>
+          Dragon, Kitsune, Dough, Portal, Rumble
+        </p>
+      </div>
+
+      <div class="tier">
+        <strong>🔥 A Tier</strong>
+        <p>
+          Buddha, Venom, T-Rex, Magma, Ice
+        </p>
+      </div>
+
+      <div class="tier">
+        <strong>👍 B Tier</strong>
+        <p>
+          Light y otras frutas útiles
+          dependiendo del objetivo.
+        </p>
+      </div>
+
+      <p>
+        Más adelante separaremos la Tier List
+        en PvP, grinding y raids.
+      </p>
+
+      <a class="top-link" href="#top">
+        ↑ Volver arriba
+      </a>
+
+    </section>
+
+
+    <!-- TRADES -->
+
+    <section class="section-box" id="trades">
+
+      <h2>
+        💱 Trade Calculator
+      </h2>
+
+      <p>
+        Selecciona hasta 4 frutas que das
+        y hasta 4 frutas que recibes.
+      </p>
+
+      <div class="trade-columns">
+
+        <div class="trade-side">
+
+          <h3>
+            📤 TÚ DAS
+          </h3>
+
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select give-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+        </div>
+
+
+        <div class="trade-side">
+
+          <h3>
+            📥 TÚ RECIBES
+          </h3>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+          <select class="trade-select receive-fruit">
+            <option value="">Elegir fruta</option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <button
+        class="trade-button"
+        onclick="calculateFruitTrade()"
+      >
+        💱 CALCULAR TRADE
+      </button>
+
+      <div
+        id="tradeResult"
+        class="trade-result"
+      >
+        Selecciona las frutas del intercambio.
+      </div>
+
+      <p>
+        ⚠️ Los valores son orientativos
+        y deberán actualizarse cuando cambie
+        el mercado de trades.
+      </p>
+
+      <a class="top-link" href="#top">
+        ↑ Volver arriba
+      </a>
+
+    </section>
+
+
+    <!-- CÓDIGOS -->
+
+    <section class="section-box" id="codigos">
+
+      <h2>
+        🎁 Códigos
+      </h2>
+
+      <p>
+        Esta sección se actualizará con códigos
+        comprobados antes de publicarlos.
+      </p>
+
+      <div class="code-card">
+        ⭐ Códigos de experiencia
+      </div>
+
+      <div class="code-card">
+        🔄 Códigos de reset de estadísticas
+      </div>
+
+      <div class="code-card">
+        🎁 Otras recompensas
+      </div>
+
+    </section>
+
+
+    <!-- BUILDS -->
+
+    <section class="section-box" id="builds">
+
+      <h2>
+        ⚔️ Builds
+      </h2>
+
+      <div class="build-card">
 
         <h3>
-
-          ${
-            tier === "S"
-              ? "⭐"
-              : tier === "A"
-              ? "🔥"
-              : tier === "B"
-              ? "👍"
-              : tier === "C"
-              ? "🟣"
-              : "🔻"
-          }
-
-          Tier ${tier}
-
+          🗡️ Sword Main
         </h3>
 
-
         <p>
-          ${descriptions[tier]}
+          Pensada para jugadores
+          que quieren centrar gran parte
+          de su daño en espada.
         </p>
 
+      </div>
 
-        <div class="tier-fruits">
+      <div class="build-card">
 
-          ${tierFruits
+        <h3>
+          🍎 Fruit Main
+        </h3>
 
-            .map(
+        <p>
+          Da prioridad a las habilidades
+          de la fruta y su daño.
+        </p>
 
-              fruit => `
+      </div>
 
-                <span
-                  class="tier-fruit"
-                >
+      <div class="build-card">
 
-                  ${fruit.emoji}
+        <h3>
+          👊 Fighting Style
+        </h3>
 
-                  ${fruit.name}
+        <p>
+          Muy interesante con frutas
+          de apoyo como Buddha.
+        </p>
 
-                </span>
+      </div>
 
-              `
-
-            )
-
-            .join("")}
-
-        </div>
-
-      `;
+    </section>
 
 
-      container.appendChild(
-        div
+    <!-- GUÍAS -->
+
+    <section class="section-box" id="guias">
+
+      <h2>
+        📚 Guías
+      </h2>
+
+      <div class="guide-card">
+
+        <h3>
+          📈 Grinding
+        </h3>
+
+        <p>
+          Elige misiones de tu nivel,
+          reúne enemigos cuando sea seguro
+          y utiliza frutas adecuadas
+          para eliminar grupos rápidamente.
+        </p>
+
+      </div>
+
+      <div class="guide-card">
+
+        <h3>
+          ⚔️ Empezar en PvP
+        </h3>
+
+        <p>
+          Aprende primero uno o dos combos,
+          practica esquivas y no gastes
+          todas las habilidades al mismo tiempo.
+        </p>
+
+      </div>
+
+      <div class="guide-card">
+
+        <h3>
+          💱 Trades
+        </h3>
+
+        <p>
+          No aceptes un intercambio solamente
+          porque una fruta sea más rara.
+          Mira también su demanda y utilidad.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /* BUSCADOR */
+
+    const fruitSearch =
+      document.getElementById("fruitSearch");
+
+    const fruitCards =
+      document.querySelectorAll(".fruit-card");
+
+    fruitSearch.addEventListener(
+      "input",
+      function () {
+
+        const text =
+          fruitSearch.value
+            .toLowerCase()
+            .trim();
+
+        fruitCards.forEach(function(card) {
+
+          const name =
+            card.dataset.fruit.toLowerCase();
+
+          if (name.includes(text)) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+
+        });
+
+      }
+    );
+
+
+    /* SOLO UNA FICHA ABIERTA */
+
+    fruitCards.forEach(function(card) {
+
+      card.addEventListener(
+        "toggle",
+        function () {
+
+          if (card.open) {
+
+            fruitCards.forEach(function(other) {
+
+              if (other !== card) {
+                other.open = false;
+              }
+
+            });
+
+          }
+
+        }
       );
 
-    }
-
-  );
-
-}
-
-
-renderTierList();
-
-
-
-/* =========================================
-   TRADE CALCULATOR
-   SE CONSERVA EL SISTEMA ANTERIOR
-========================================= */
-
-
-const fruitValues = {
-
-  "Rocket": 1,
-
-  "Spin": 2,
-
-  "Blade": 3,
-
-  "Spring": 4,
-
-  "Bomb": 5,
-
-  "Smoke": 6,
-
-  "Spike": 7,
-
-  "Flame": 10,
-
-  "Ice": 13,
-
-  "Sand": 14,
-
-  "Dark": 16,
-
-  "Light": 22,
-
-  "Rubber": 24,
-
-  "Ghost": 27,
-
-  "Magma": 30,
-
-  "Quake": 35,
-
-  "Love": 38,
-
-  "Spider": 42,
-
-  "Sound": 50,
-
-  "Buddha": 55,
-
-  "Phoenix": 60,
-
-  "Pain": 65,
-
-  "Gravity": 70,
-
-  "Portal": 75,
-
-  "Rumble": 80,
-
-  "Blizzard": 85,
-
-  "Mammoth": 95,
-
-  "Shadow": 100,
-
-  "T-Rex": 110,
-
-  "Venom": 115,
-
-  "Control": 120,
-
-  "Spirit": 125,
-
-  "Dough": 135,
-
-  "Leopard": 160,
-
-  "Yeti": 180,
-
-  "Kitsune": 220,
-
-  "Dragon": 260
-
-};
-
-
-
-function fillFruitSelectors() {
-
-
-  const selectors =
-
-    document.querySelectorAll(
-      ".trade-select"
-    );
-
-
-  const names =
-
-    Object.keys(
-      fruitValues
-    );
-
-
-  selectors.forEach(
-
-    select => {
-
-
-      select.innerHTML = `
-
-        <option value="">
-
-          Elegir fruta
-
-        </option>
-
-      `;
-
-
-      names.forEach(
-
-        fruit => {
-
+    });
+
+
+    /* VALORES ORIENTATIVOS */
+
+    const fruitValues = {
+
+      "Rocket": 1,
+      "Spin": 2,
+      "Blade": 3,
+      "Spring": 4,
+      "Bomb": 5,
+      "Smoke": 6,
+      "Spike": 7,
+      "Flame": 10,
+      "Ice": 13,
+      "Sand": 14,
+      "Dark": 16,
+      "Diamond": 18,
+      "Light": 22,
+      "Rubber": 24,
+      "Ghost": 27,
+      "Magma": 30,
+      "Quake": 35,
+      "Love": 38,
+      "Spider": 42,
+      "Sound": 50,
+      "Buddha": 55,
+      "Phoenix": 60,
+      "Pain": 65,
+      "Gravity": 70,
+      "Portal": 75,
+      "Rumble": 80,
+      "Blizzard": 85,
+      "Mammoth": 95,
+      "Shadow": 100,
+      "T-Rex": 110,
+      "Venom": 115,
+      "Control": 120,
+      "Spirit": 125,
+      "Dough": 135,
+      "Leopard": 160,
+      "Yeti": 180,
+      "Kitsune": 220,
+      "Dragon": 260
+
+    };
+
+
+    function fillFruitSelectors() {
+
+      const selectors =
+        document.querySelectorAll(".trade-select");
+
+      const names =
+        Object.keys(fruitValues);
+
+
+      selectors.forEach(function(select) {
+
+        names.forEach(function(fruit) {
 
           const option =
+            document.createElement("option");
 
-            document.createElement(
-              "option"
-            );
+          option.value = fruit;
+          option.textContent = fruit;
 
+          select.appendChild(option);
 
-          option.value =
-            fruit;
+        });
 
-
-          option.textContent =
-            fruit;
-
-
-          select.appendChild(
-            option
-          );
-
-        }
-
-      );
+      });
 
     }
 
-  );
 
-}
-
-
-fillFruitSelectors();
+    fillFruitSelectors();
 
 
+    function calculateFruitTrade() {
 
-function calculateFruitTrade() {
+      const giveSelectors =
+        document.querySelectorAll(".give-fruit");
 
+      const receiveSelectors =
+        document.querySelectorAll(".receive-fruit");
 
-  const giveSelectors =
+      let giveTotal = 0;
+      let receiveTotal = 0;
 
-    document.querySelectorAll(
-      ".give-fruit"
-    );
-
-
-  const receiveSelectors =
-
-    document.querySelectorAll(
-      ".receive-fruit"
-    );
+      let giveNames = [];
+      let receiveNames = [];
 
 
-  let giveTotal = 0;
+      giveSelectors.forEach(function(select) {
 
-  let receiveTotal = 0;
+        const fruit = select.value;
+
+        if (fruit) {
+
+          giveTotal += fruitValues[fruit];
+          giveNames.push(fruit);
+
+        }
+
+      });
 
 
-  let giveNames = [];
+      receiveSelectors.forEach(function(select) {
 
-  let receiveNames = [];
+        const fruit = select.value;
+
+        if (fruit) {
+
+          receiveTotal += fruitValues[fruit];
+          receiveNames.push(fruit);
+
+        }
+
+      });
 
 
-  giveSelectors.forEach(
+      const result =
+        document.getElementById("tradeResult");
 
-    select => {
 
-      const fruit =
-        select.value;
+      if (
+        giveNames.length === 0 ||
+        receiveNames.length === 0
+      ) {
 
-      if (fruit) {
+        result.innerHTML =
+          "⚠️ Elige al menos una fruta en cada lado.";
 
-        giveTotal +=
-          fruitValues[
-            fruit
-          ];
+        return;
 
-        giveNames.push(
-          fruit
+      }
+
+
+      const difference =
+        receiveTotal - giveTotal;
+
+      const percentage =
+        Math.round(
+          Math.abs(difference) /
+          giveTotal *
+          100
         );
+
+
+      if (receiveTotal > giveTotal) {
+
+        result.innerHTML =
+          "✅ <strong>WIN</strong><br><br>" +
+          "Das: " +
+          giveNames.join(" + ") +
+          "<br>" +
+          "Recibes: " +
+          receiveNames.join(" + ") +
+          "<br><br>" +
+          "📈 Aproximadamente +" +
+          percentage +
+          "% de valor.";
+
+      }
+
+
+      else if (receiveTotal < giveTotal) {
+
+        result.innerHTML =
+          "❌ <strong>LOSE</strong><br><br>" +
+          "Das: " +
+          giveNames.join(" + ") +
+          "<br>" +
+          "Recibes: " +
+          receiveNames.join(" + ") +
+          "<br><br>" +
+          "📉 Aproximadamente -" +
+          percentage +
+          "% de valor.";
+
+      }
+
+
+      else {
+
+        result.innerHTML =
+          "⚖️ <strong>FAIR</strong><br><br>" +
+          "Das: " +
+          giveNames.join(" + ") +
+          "<br>" +
+          "Recibes: " +
+          receiveNames.join(" + ") +
+          "<br><br>" +
+          "Los valores son prácticamente iguales.";
 
       }
 
     }
 
-  );
-
-
-  receiveSelectors.forEach(
-
-    select => {
-
-      const fruit =
-        select.value;
-
-      if (fruit) {
-
-        receiveTotal +=
-          fruitValues[
-            fruit
-          ];
-
-        receiveNames.push(
-          fruit
-        );
-
-      }
-
-    }
-
-  );
-
-
-  const result =
-
-    document.getElementById(
-      "tradeResult"
-    );
-
-
-  if (
-    giveNames.length === 0 ||
-    receiveNames.length === 0
-  ) {
-
-    result.innerHTML =
-
-      "⚠️ Elige al menos una fruta en cada lado.";
-
-    return;
-
-  }
-
-
-  const difference =
-
-    receiveTotal -
-    giveTotal;
-
-
-  const percentage =
-
-    Math.round(
-
-      Math.abs(
-        difference
-      )
-
-      /
-
-      giveTotal
-
-      *
-
-      100
-
-    );
-
-
-  if (
-    receiveTotal >
-    giveTotal
-  ) {
-
-    result.innerHTML = `
-
-      ✅
-      <strong>
-        WIN
-      </strong>
-
-      <br><br>
-
-      📤 Das:
-      ${giveNames.join(" + ")}
-
-      <br>
-
-      📥 Recibes:
-      ${receiveNames.join(" + ")}
-
-      <br><br>
-
-      📈 Aproximadamente
-
-      <strong>
-        +${percentage}%
-      </strong>
-
-      de valor orientativo.
-
-    `;
-
-  }
-
-
-  else if (
-    receiveTotal <
-    giveTotal
-  ) {
-
-    result.innerHTML = `
-
-      ❌
-      <strong>
-        LOSE
-      </strong>
-
-      <br><br>
-
-      📤 Das:
-      ${giveNames.join(" + ")}
-
-      <br>
-
-      📥 Recibes:
-      ${receiveNames.join(" + ")}
-
-      <br><br>
-
-      📉 Aproximadamente
-
-      <strong>
-        -${percentage}%
-      </strong>
-
-      de valor orientativo.
-
-    `;
-
-  }
-
-
-  else {
-
-    result.innerHTML = `
-
-      ⚖️
-      <strong>
-        FAIR
-      </strong>
-
-      <br><br>
-
-      📤 Das:
-      ${giveNames.join(" + ")}
-
-      <br>
-
-      📥 Recibes:
-      ${receiveNames.join(" + ")}
-
-      <br><br>
-
-      Los dos lados tienen
-      el mismo valor orientativo.
-
-    `;
-
-  }
-
-}
-
-
-
-function resetTrade() {
-
-
-  document
-
-    .querySelectorAll(
-      ".trade-select"
-    )
-
-    .forEach(
-
-      select => {
-
-        select.value =
-          "";
-
-      }
-
-    );
-
-
-  document
-
-    .getElementById(
-      "tradeResult"
-    )
-
-    .innerHTML =
-
-      "Selecciona al menos una fruta en cada lado.";
-
-}
-
-
-
-/* =========================================
-   CÓDIGOS
-========================================= */
-
-
-const codes = [
-
-
-{
-
-code:
-"EASTEREXP",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"LIGHTNINGABUSE",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"1LOSTADMIN",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"ADMINFIGHT",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"SUB2GAMERROBOT_EXP1",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Sub2CaptainMaui",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Axiore",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Bluxxy",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Enyu_is_Pro",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"JCWK",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"KittGaming",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Magicbus",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Starcodeheo",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Sub2Daigrock",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Sub2Fer999",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Sub2NoobMaster123",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"Sub2OfficialNoobie",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"TantaiGaming",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"TheGreatAce",
-
-reward:
-"2x EXP",
-
-category:
-"xp"
-
-},
-
-
-{
-
-code:
-"KITT_RESET",
-
-reward:
-"Reset / refund de estadísticas",
-
-category:
-"reset"
-
-},
-
-
-{
-
-code:
-"SUB2GAMERROBOT_RESET1",
-
-reward:
-"Reset de estadísticas",
-
-category:
-"reset"
-
-},
-
-
-{
-
-code:
-"Sub2UncleKizaru",
-
-reward:
-"Reset / refund de estadísticas",
-
-category:
-"reset"
-
-},
-
-
-{
-
-code:
-"Fudd10",
-
-reward:
-"Beli",
-
-category:
-"other"
-
-},
-
-
-{
-
-code:
-"Fudd10_v2",
-
-reward:
-"Beli",
-
-category:
-"other"
-
-},
-
-
-{
-
-code:
-"BIGNEWS",
-
-reward:
-"Título dentro del juego",
-
-category:
-"other"
-
-}
-
-];
-
-
-
-function createCodeCard(
-  data
-) {
-
-
-  const card =
-
-    document.createElement(
-      "div"
-    );
-
-
-  card.className =
-    "code-card";
-
-
-  card.innerHTML = `
-
-    <div>
-
-      <div class="code-name">
-
-        ${data.code}
-
-      </div>
-
-      <div class="code-reward">
-
-        ${data.reward}
-
-      </div>
-
-    </div>
-
-
-    <button
-
-      class="copy-button"
-
-      onclick="
-        copyCode(
-          '${data.code}',
-          this
-        )
-      "
-
-    >
-
-      COPIAR
-
-    </button>
-
-  `;
-
-
-  return card;
-
-}
-
-
-
-function renderCodes() {
-
-
-  const containers = {
-
-    xp:
-      document.getElementById(
-        "xpCodes"
-      ),
-
-    reset:
-      document.getElementById(
-        "resetCodes"
-      ),
-
-    other:
-      document.getElementById(
-        "otherCodes"
-      )
-
-  };
-
-
-  codes.forEach(
-
-    code => {
-
-      containers[
-        code.category
-      ]
-
-      .appendChild(
-
-        createCodeCard(
-          code
-        )
-
-      );
-
-    }
-
-  );
-
-}
-
-
-renderCodes();
-
-
-
-function copyCode(
-  code,
-  button
-) {
-
-
-  if (
-    navigator.clipboard
-  ) {
-
-
-    navigator.clipboard
-
-      .writeText(
-        code
-      )
-
-      .then(
-        () => {
-
-          button.textContent =
-            "✓ COPIADO";
-
-
-          setTimeout(
-            () => {
-
-              button.textContent =
-                "COPIAR";
-
-            },
-            1200
-          );
-
-        }
-      )
-
-      .catch(
-        () => {
-
-          alert(
-            "Código: " +
-            code
-          );
-
-        }
-      );
-
-  }
-
-
-  else {
-
-    alert(
-      "Código: " +
-      code
-    );
-
-  }
-
-}
-
-
-
-/* =========================================
-   BUILDS
-========================================= */
-
-
-const builds = [
-
-
-{
-
-title:
-"🟡 Buddha Grinder — subir de nivel",
-
-stage:
-"Second Sea / Third Sea",
-
-fruit:
-"Buddha",
-
-style:
-"Sharkman Karate u otro Fighting Style con buenos M1",
-
-weapon:
-"Opcional",
-
-stats:
-"Prioriza Melee y Defense si utilizas Buddha principalmente por su transformación.",
-
-use:
-"Grinding, raids y subir mastery.",
-
-tips: [
-
-"Activa la transformación antes de agrupar enemigos.",
-
-"Utiliza principalmente M1 rápidos.",
-
-"No es necesario depender de las habilidades ofensivas de Buddha.",
-
-"Busca varios NPC de la misma misión y júntalos antes de empezar a golpear.",
-
-"Es una de las mejores configuraciones para subir mastery de Fighting Styles."
-
-]
-
-},
-
-
-{
-
-title:
-"🌀 Portal Sword Main — PvP",
-
-stage:
-"Third Sea / endgame",
-
-fruit:
-"Portal",
-
-style:
-"Godhuman, Electric Claw u otro estilo de combo",
-
-weapon:
-"Yama, CDK u otra espada que controles bien",
-
-stats:
-"Prioriza Sword, Defense y Melee. Portal se utiliza principalmente por movilidad y control.",
-
-use:
-"PvP, bounty y movilidad.",
-
-tips: [
-
-"Utiliza Portal para conseguir una buena posición.",
-
-"No dependas del daño de la fruta.",
-
-"Busca un stun o apertura y continúa con espada.",
-
-"Guarda al menos una herramienta de movilidad para escapar.",
-
-"Practica un combo sencillo antes de usar una cadena larga."
-
-]
-
-},
-
-
-{
-
-title:
-"🍩 Dough — Fruit Main PvP",
-
-stage:
-"Late game",
-
-fruit:
-"Dough",
-
-style:
-"Godhuman u otro Fighting Style de combo",
-
-weapon:
-"Espada para extender combos",
-
-stats:
-"Prioriza Blox Fruit, Defense y Melee.",
-
-use:
-"PvP y combos.",
-
-tips: [
-
-"El stun inicial es fundamental.",
-
-"No gastes todas las habilidades si el rival todavía puede escapar.",
-
-"Aprende el timing entre cada ataque.",
-
-"Practica primero contra amigos o jugadores sin arriesgar bounty.",
-
-"Dough funciona especialmente bien cuando sabes encadenar ataques."
-
-]
-
-},
-
-
-{
-
-title:
-"⚡ Rumble Sword — control y combos",
-
-stage:
-"Late game / endgame",
-
-fruit:
-"Rumble",
-
-style:
-"Godhuman o Electric Claw",
-
-weapon:
-"Yama, CDK u otra espada de combo",
-
-stats:
-"Sword, Defense y Melee.",
-
-use:
-"PvP y stuns.",
-
-tips: [
-
-"Utiliza los stuns de Rumble para comenzar la cadena.",
-
-"Deja que la espada haga buena parte del daño.",
-
-"No desperdicies varias habilidades de stun a la vez.",
-
-"Su movilidad también sirve para reposicionarte."
-
-]
-
-},
-
-
-{
-
-title:
-"🌋 Magma — Sea Events",
-
-stage:
-"Second Sea / Third Sea",
-
-fruit:
-"Magma",
-
-style:
-"Sharkman Karate u otro estilo cómodo",
-
-weapon:
-"Opcional",
-
-stats:
-"Blox Fruit, Defense y Melee suficiente para energía.",
-
-use:
-"Sea Beasts, raids y enemigos grandes.",
-
-tips: [
-
-"Mantén al objetivo dentro de las áreas de Magma.",
-
-"Los enemigos grandes reciben muy bien ataques de área.",
-
-"Prioriza supervivencia en encuentros largos.",
-
-"No necesitas que Magma sea una fruta top PvP para que sea excelente en PvE."
-
-]
-
-},
-
-
-{
-
-title:
-"🦊 Kitsune — All Round",
-
-stage:
-"Late game",
-
-fruit:
-"Kitsune",
-
-style:
-"Fighting Style que domines",
-
-weapon:
-"Opcional",
-
-stats:
-"Blox Fruit, Defense y Melee.",
-
-use:
-"Grinding, movilidad y PvP.",
-
-tips: [
-
-"Utiliza la velocidad para escoger cuándo entrar en combate.",
-
-"No persigas sin pensar.",
-
-"Durante grinding aprovecha la movilidad para acortar rutas.",
-
-"Es una fruta muy valiosa; piensa antes de comerla si también haces trades."
-
-]
-
-}
-
-];
-
-
-
-function renderBuilds() {
-
-
-  const container =
-
-    document.getElementById(
-      "buildList"
-    );
-
-
-  builds.forEach(
-
-    build => {
-
-
-      const details =
-
-        document.createElement(
-          "details"
-        );
-
-
-      details.innerHTML = `
-
-        <summary>
-
-          ${build.title}
-
-        </summary>
-
-
-        <div class="details-content">
-
-
-          <div class="stats">
-
-
-            <div class="stat">
-
-              🎮 Etapa
-
-              <br>
-
-              <strong>
-                ${build.stage}
-              </strong>
-
-            </div>
-
-
-            <div class="stat">
-
-              🍎 Fruta
-
-              <br>
-
-              <strong>
-                ${build.fruit}
-              </strong>
-
-            </div>
-
-
-          </div>
-
-
-          <p>
-
-            <strong>
-              👊 Fighting Style:
-            </strong>
-
-            ${build.style}
-
-          </p>
-
-
-          <p>
-
-            <strong>
-              🗡️ Arma:
-            </strong>
-
-            ${build.weapon}
-
-          </p>
-
-
-          <p>
-
-            <strong>
-              📊 Stats:
-            </strong>
-
-            ${build.stats}
-
-          </p>
-
-
-          <p>
-
-            <strong>
-              🎯 Uso:
-            </strong>
-
-            ${build.use}
-
-          </p>
-
-
-          <h4>
-            💡 Consejos
-          </h4>
-
-
-          <ul class="steps">
-
-            ${build.tips
-
-              .map(
-
-                tip =>
-                  `<li>
-                    ${tip}
-                  </li>`
-
-              )
-
-              .join("")}
-
-          </ul>
-
-
-        </div>
-
-      `;
-
-
-      container.appendChild(
-        details
-      );
-
-    }
-
-  );
-
-}
-
-
-renderBuilds();
-
-
-
-/* =========================================
-   GUÍAS
-========================================= */
-
-
-const guides = [
-
-
-{
-
-title:
-"🗡️ Cómo conseguir Yama",
-
-intro:
-"Yama es una espada de Third Sea y además es importante para avanzar hacia Cursed Dual Katana.",
-
-requirements: [
-
-"Estar en Third Sea.",
-
-"Hacer misiones de Elite Hunter o progresión equivalente necesaria.",
-
-"Cuantas más misiones completes, mayor será tu progreso para poder extraer la espada."
-
-],
-
-steps: [
-
-"Ve a Castle on the Sea.",
-
-"Busca al NPC Elite Hunter.",
-
-"Completa misiones contra Elite Pirates.",
-
-"Continúa acumulando misiones; llegar a 30 es la opción más segura.",
-
-"Después ve a Hydra Island.",
-
-"Busca la zona secreta detrás de la cascada.",
-
-"Entra al templo oculto.",
-
-"Derrota los enemigos del interior y acércate a Yama.",
-
-"Intenta extraerla."
-
-],
-
-tips: [
-
-"No intentes conseguirla demasiado pronto.",
-
-"Portal es muy útil para desplazarte buscando Elite Pirates.",
-
-"Continúa progresando con Yama si más adelante quieres Cursed Dual Katana."
-
-]
-
-},
-
-
-{
-
-title:
-"🩸 Sanguine Art — guía resumida",
-
-intro:
-"Sanguine Art es un Fighting Style de contenido avanzado. Los requisitos pueden cambiar con actualizaciones, por lo que conviene comprobarlos antes de gastar materiales importantes.",
-
-requirements: [
-
-"Estar suficientemente avanzado en Third Sea.",
-
-"Completar contenido avanzado relacionado con su desbloqueo.",
-
-"Conseguir los materiales específicos requeridos por el NPC correspondiente."
-
-],
-
-steps: [
-
-"Avanza primero hasta el contenido final de Third Sea.",
-
-"Guarda materiales raros y Fragments mientras progresas.",
-
-"Completa Sea Events y contenido avanzado que pueda ser necesario.",
-
-"Localiza al NPC encargado del Fighting Style.",
-
-"Comprueba todos los requisitos antes de gastar materiales.",
-
-"Cuando tengas todo, compra o desbloquea Sanguine Art."
-
-],
-
-tips: [
-
-"No vendas o malgastes materiales raros si todavía no sabes para qué sirven.",
-
-"Buddha puede ayudarte bastante a farmear mastery y materiales.",
-
-"Antes de seguir una ruta exacta revisaremos esta ficha cada vez que cambie el juego."
-
-]
-
-},
-
-
-{
-
-title:
-"👊 Cómo conseguir Godhuman",
-
-intro:
-"Godhuman es uno de los Fighting Styles más conocidos del endgame y se utiliza mucho en builds de combos.",
-
-requirements: [
-
-"Progresar previamente por varios Fighting Styles avanzados.",
-
-"Subir bastante mastery en los estilos necesarios.",
-
-"Guardar Beli, Fragments y materiales."
-
-],
-
-steps: [
-
-"Desbloquea primero los Fighting Styles anteriores.",
-
-"Sube mastery mientras haces grinding en lugar de dejarlo todo para el final.",
-
-"Utiliza Buddha si quieres acelerar mastery de Fighting Styles.",
-
-"Consigue los materiales necesarios.",
-
-"Guarda suficiente Beli y Fragments.",
-
-"Cuando cumplas los requisitos, habla con el NPC correspondiente."
-
-],
-
-tips: [
-
-"No intentes subir todo el mastery en una sola sesión.",
-
-"Combina el entrenamiento de mastery con quests o farming.",
-
-"Godhuman destaca especialmente cuando ya conoces cómo encadenar ataques."
-
-]
-
-},
-
-
-{
-
-title:
-"⚔️ Camino hacia Cursed Dual Katana",
-
-intro:
-"Cursed Dual Katana, normalmente abreviada CDK, requiere progresar con Yama y Tushita.",
-
-requirements: [
-
-"Conseguir Yama.",
-
-"Conseguir Tushita.",
-
-"Subir mastery suficiente con ambas.",
-
-"Estar avanzado en Third Sea."
-
-],
-
-steps: [
-
-"Consigue Yama mediante su propia cadena de progresión.",
-
-"Consigue Tushita completando su puzzle.",
-
-"Entrena ambas espadas.",
-
-"Cuando cumplas los requisitos, comienza la cadena de pruebas de CDK.",
-
-"Completa los objetivos relacionados con ambas espadas.",
-
-"Finaliza el puzzle para obtener Cursed Dual Katana."
-
-],
-
-tips: [
-
-"Sube mastery de Yama y Tushita mientras haces otras actividades.",
-
-"No dejes toda la preparación para el final.",
-
-"CDK es especialmente útil para Sword Mains que disfrutan de combos."
-
-]
-
-},
-
-
-{
-
-title:
-"🦈 Sharkman Karate",
-
-intro:
-"Sharkman Karate es un Fighting Style muy cómodo para grinding y combina especialmente bien con Buddha.",
-
-requirements: [
-
-"Progresar desde Water Kung Fu.",
-
-"Llegar a Second Sea.",
-
-"Cumplir los requisitos de mastery y compra del estilo."
-
-],
-
-steps: [
-
-"Entrena Water Kung Fu.",
-
-"Sube su mastery mientras haces quests.",
-
-"Avanza hasta Second Sea.",
-
-"Consigue los requisitos necesarios.",
-
-"Desbloquea Sharkman Karate.",
-
-"Combínalo con Buddha si buscas grinding rápido."
-
-],
-
-tips: [
-
-"Sus ataques rápidos funcionan muy bien con la transformación de Buddha.",
-
-"También sirve para subir mastery de forma cómoda.",
-
-"No hace falta tener una build PvP sofisticada para aprovecharlo."
-
-]
-
-},
-
-
-{
-
-title:
-"💱 Cómo evitar malos trades",
-
-intro:
-"El precio del Dealer y el valor real de intercambio no son lo mismo.",
-
-requirements: [
-
-"Conocer qué frutas tienen demanda.",
-
-"No mirar solamente la rareza.",
-
-"Comparar ambos lados antes de aceptar."
-
-],
-
-steps: [
-
-"Introduce las frutas en el Trade Calculator.",
-
-"Mira si aparece WIN, FAIR o LOSE.",
-
-"Comprueba también la demanda de cada fruta.",
-
-"Desconfía de trades en los que te presionen para aceptar inmediatamente.",
-
-"Si dudas, espera y compáralo con otros intercambios."
-
-],
-
-tips: [
-
-"Una fruta con precio alto puede tener menos demanda que otra aparentemente más barata.",
-
-"Los valores comunitarios cambian después de actualizaciones y reworks.",
-
-"Nuestro calculador es una orientación, no una garantía de mercado."
-
-]
-
-}
-
-];
-
-
-
-function renderGuides() {
-
-
-  const container =
-
-    document.getElementById(
-      "guideList"
-    );
-
-
-  guides.forEach(
-
-    guide => {
-
-
-      const details =
-
-        document.createElement(
-          "details"
-        );
-
-
-      details.innerHTML = `
-
-        <summary>
-
-          ${guide.title}
-
-        </summary>
-
-
-        <div class="details-content">
-
-
-          <p>
-            ${guide.intro}
-          </p>
-
-
-          <h4>
-            📋 Qué necesitas
-          </h4>
-
-
-          <ul class="steps">
-
-            ${guide.requirements
-
-              .map(
-
-                requirement =>
-                  `<li>
-                    ${requirement}
-                  </li>`
-
-              )
-
-              .join("")}
-
-          </ul>
-
-
-          <h4>
-            🧭 Paso a paso
-          </h4>
-
-
-          <ol class="steps">
-
-            ${guide.steps
-
-              .map(
-
-                step =>
-                  `<li>
-                    ${step}
-                  </li>`
-
-              )
-
-              .join("")}
-
-          </ol>
-
-
-          <h4>
-            💡 Consejos
-          </h4>
-
-
-          <ul class="steps">
-
-            ${guide.tips
-
-              .map(
-
-                tip =>
-                  `<li>
-                    ${tip}
-                  </li>`
-
-              )
-
-              .join("")}
-
-          </ul>
-
-
-        </div>
-
-      `;
-
-
-      container.appendChild(
-        details
-      );
-
-    }
-
-  );
-
-}
-
-
-renderGuides();
-
-
-</script>
+  </script>
 
 
 </body>
-
-  </html>
+</html>

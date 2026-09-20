@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rocket League - Guías, rangos y entrenamiento | Universal Games</title>
+<meta name="description" content="Guía de Rocket League en español: rangos, mecánicas, cámara, controles, rotaciones, coches y entrenamiento.">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ color:white;
+ background:
+ radial-gradient(circle at 10% 0%,#064a7d 0%,transparent 30%),
+ radial-gradient(circle at 90% 10%,#e76b00 0%,transparent 27%),
+ #07111e;
+}
+
+header{
+ position:sticky;
+ top:0;
+ z-index:100;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+ padding:14px 5%;
+ background:rgba(5,12,23,.93);
+ backdrop-filter:blur(12px);
+ border-bottom:1px solid #ffffff18;
+}
+
+.logo{
+ font-size:20px;
+ font-weight:900;
+}
+
+.back{
+ color:white;
+ text-decoration:none;
+ background:#ffffff12;
+ padding:10px 14px;
+ border-radius:12px;
+}
+
+main{
+ width:min(1100px,92%);
+ margin:auto;
+}
+
+.hero{
+ min-height:470px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:60px 0;
+}
+
+.hero h1{
+ font-size:clamp(50px,10vw,90px);
+ margin:0;
+ background:linear-gradient(90deg,#29b6ff,#fff,#ff8a24);
+ -webkit-background-clip:text;
+ color:transparent;
+}
+
+.hero p{
+ max-width:700px;
+ margin:20px auto;
+ color:#b8c8d8;
+ font-size:18px;
+ line-height:1.6;
+}
+
+.badge{
+ display:inline-block;
+ padding:7px 13px;
+ border-radius:100px;
+ background:#168bdc25;
+ border:1px solid #28aaff66;
+ color:#6bcaff;
+ font-weight:bold;
+}
+
+nav{
+ display:flex;
+ gap:10px;
+ overflow-x:auto;
+ padding:15px 0 25px;
+}
+
+nav a{
+ white-space:nowrap;
+ text-decoration:none;
+ color:white;
+ background:#ffffff0e;
+ border:1px solid #ffffff18;
+ padding:11px 15px;
+ border-radius:12px;
+}
+
+nav a:hover{background:#168bdc}
+
+section{
+ margin:25px 0 60px;
+}
+
+h2{
+ font-size:30px;
+ margin-bottom:22px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:16px;
+}
+
+.card{
+ background:linear-gradient(145deg,#101d2d,#0a1421);
+ border:1px solid #ffffff13;
+ border-radius:18px;
+ padding:21px;
+ transition:.2s;
+}
+
+.card:hover{
+ transform:translateY(-4px);
+ border-color:#29aaff66;
+}
+
+.card h3{
+ margin-top:0;
+}
+
+.card p{
+ color:#aebdca;
+ line-height:1.55;
+}
+
+.rank{
+ text-align:center;
+ font-weight:bold;
+}
+
+.rank span{
+ font-size:32px;
+ display:block;
+ margin-bottom:8px;
+}
+
+.search{
+ width:100%;
+ padding:15px;
+ border-radius:13px;
+ border:1px solid #ffffff22;
+ background:#ffffff0c;
+ color:white;
+ font-size:16px;
+ margin-bottom:22px;
+ outline:none;
+}
+
+.search:focus{
+ border-color:#28aaff;
+}
+
+.quiz{
+ background:linear-gradient(135deg,#07365a,#422000);
+ border-radius:22px;
+ padding:25px;
+}
+
+.quiz button{
+ border:0;
+ border-radius:12px;
+ padding:12px 17px;
+ margin:5px;
+ cursor:pointer;
+ background:#168bdc;
+ color:white;
+ font-weight:bold;
+}
+
+.quiz button:hover{
+ background:#29aaff;
+}
+
+#result{
+ margin-top:18px;
+ font-size:18px;
+ font-weight:bold;
+}
+
+.tip{
+ border-left:4px solid #ff821c;
+ padding:15px;
+ background:#ff821c12;
+ border-radius:0 12px 12px 0;
+ margin:15px 0;
+}
+
+footer{
+ text-align:center;
+ padding:40px 20px;
+ border-top:1px solid #ffffff15;
+ color:#8393a3;
+}
+
+@media(max-width:600px){
+ .hero{min-height:390px}
+ .hero h1{font-size:52px}
+ h2{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">🎮 Universal Games</div>
+ <a class="back" href="index.html">← Inicio</a>
+</header>
+
+<main>
+
+<section class="hero">
+ <div>
+  <span class="badge">🚗 GUÍA ROCKET LEAGUE</span>
+  <h1>ROCKET<br>LEAGUE</h1>
+  <p>
+   Aprende mecánicas, rotaciones, rangos, cámara y entrenamiento
+   para mejorar tu juego.
+  </p>
+ </div>
+</section>
+
+<nav>
+ <a href="#rangos">🏆 Rangos</a>
+ <a href="#mecanicas">🚀 Mecánicas</a>
+ <a href="#camara">📷 Cámara</a>
+ <a href="#modos">⚽ Modos</a>
+ <a href="#coches">🚗 Coches</a>
+ <a href="#entrenamiento">🎯 Entrenamiento</a>
+ <a href="#quiz">🧠 Test</a>
+</nav>
+
+<section>
+<h2>🔎 Busca en la guía</h2>
+<input
+ id="search"
+ class="search"
+ placeholder="Ejemplo: aerial, Diamond, dribbling..."
+ oninput="searchGuide()">
+</section>
+
+<section id="rangos" class="guide">
+<h2>🏆 Rangos competitivos</h2>
+
+<div class="grid">
+
+<div class="card rank"><span>🥉</span>Bronce<br>I · II · III</div>
+<div class="card rank"><span>🥈</span>Plata<br>I · II · III</div>
+<div class="card rank"><span>🥇</span>Oro<br>I · II · III</div>
+<div class="card rank"><span>💠</span>Platino<br>I · II · III</div>
+<div class="card rank"><span>💎</span>Diamante<br>I · II · III</div>
+<div class="card rank"><span>🏆</span>Campeón<br>I · II · III</div>
+<div class="card rank"><span>🔥</span>Gran Campeón<br>I · II · III</div>
+<div class="card rank"><span>⚡</span>Leyenda Supersónica</div>
+
+</div>
+
+<div class="tip">
+Cada rango tiene cuatro divisiones: División I, II, III y IV.
+Ganar partidas competitivas puede hacerte subir; perder puede hacerte bajar.
+</div>
+</section>
+
+
+<section id="mecanicas" class="guide">
+<h2>🚀 Mecánicas</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🟢 Básicas</h3>
+<p>
+Power shot<br>
+Powerslide<br>
+Boost management<br>
+Ball camera<br>
+Recoveries
+</p>
+</div>
+
+<div class="card">
+<h3>🔵 Intermedias</h3>
+<p>
+Fast aerial<br>
+Half-flip<br>
+Wave dash<br>
+Dribbling<br>
+Flicks
+</p>
+</div>
+
+<div class="card">
+<h3>🟣 Avanzadas</h3>
+<p>
+Air dribble<br>
+Double tap<br>
+Ceiling shot<br>
+Flip reset<br>
+Musty flick
+</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="camara" class="guide">
+
+<h2>📷 Cámara y controles</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Campo de visión</h3>
+<p>
+Un campo de visión amplio ayuda a ver más parte del campo.
+Prueba distintas configuraciones hasta encontrar una cómoda.
+</p>
+</div>
+
+<div class="card">
+<h3>Altura y distancia</h3>
+<p>
+Cambian la posición de la cámara respecto al coche.
+Evita copiar ajustes sin probarlos tú mismo.
+</p>
+</div>
+
+<div class="card">
+<h3>Rigidez</h3>
+<p>
+Controla cuánto sigue la cámara al coche durante el movimiento.
+</p>
+</div>
+
+<div class="card">
+<h3>Camera Shake</h3>
+<p>
+Muchos jugadores prefieren quitar la agitación para tener
+una imagen más estable.
+</p>
+</div>
+
+</div>
+
+<div class="tip">
+💡 No existe una configuración perfecta para todo el mundo.
+Lo importante es que puedas controlar el coche y ver bien el campo.
+</div>
+
+</section>
+
+
+<section id="modos" class="guide">
+
+<h2>⚽ Cómo jugar cada modo</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>👤 1v1</h3>
+<p>
+Controla el balón y evita regalar la posesión.
+Los errores se castigan muchísimo porque no tienes compañero detrás.
+</p>
+</div>
+
+<div class="card">
+<h3>👥 2v2</h3>
+<p>
+No ataques los dos al mismo tiempo.
+Si tu compañero entra al balón, prepárate para cubrir.
+</p>
+</div>
+
+<div class="card">
+<h3>👥👤 3v3</h3>
+<p>
+La rotación y el posicionamiento son fundamentales.
+No persigas constantemente el balón.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="coches" class="guide">
+
+<h2>🚗 Coches y hitboxes</h2>
+
+<p style="color:#aebdca">
+Los coches pueden verse muy diferentes, pero comparten distintos
+tipos de hitbox. Elige el coche con el que controles mejor tus golpes.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Octane</h3>
+<p>Una de las hitboxes más conocidas y versátiles.</p>
+</div>
+
+<div class="card">
+<h3>Dominus</h3>
+<p>Más larga y baja. Puede resultar cómoda para determinados golpes y flicks.</p>
+</div>
+
+<div class="card">
+<h3>Breakout</h3>
+<p>Hitbox larga y plana.</p>
+</div>
+
+<div class="card">
+<h3>Plank</h3>
+<p>Especialmente baja y ancha.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="entrenamiento" class="guide">
+
+<h2>🎯 ¿Qué practicar?</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Bronce → Oro</h3>
+<p>
+Golpear la pelota con fuerza, defender, usar la cámara del balón
+y aprender a no gastar todo el boost.
+</p>
+</div>
+
+<div class="card">
+<h3>Platino → Diamante</h3>
+<p>
+Fast aerial, recoveries, tiros consistentes, wave dash y rotaciones.
+</p>
+</div>
+
+<div class="card">
+<h3>Campeón+</h3>
+<p>
+Mejora velocidad de decisión, control aéreo, primeros toques,
+lectura de rebotes y consistencia.
+</p>
+</div>
+
+</div>
+
+<div class="tip">
+🔥 Practicar una mecánica sencilla hasta hacerla consistentemente
+suele ser más útil que intentar diez mecánicas difíciles a la vez.
+</div>
+
+</section>
+
+
+<section id="quiz">
+
+<h2>🧠 ¿Qué deberías entrenar?</h2>
+
+<div class="quiz">
+
+<h3>¿Qué es lo que más te cuesta?</h3>
+
+<button onclick="result('aim')">⚽ Marcar goles</button>
+<button onclick="result('air')">🚀 Jugar en el aire</button>
+<button onclick="result('def')">🛡️ Defender</button>
+<button onclick="result('speed')">⚡ Ir rápido</button>
+<button onclick="result('team')">👥 Jugar en equipo</button>
+
+<div id="result">
+Elige una opción 👆
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<p>🎮 Universal Games · 2026</p>
+<p>Sitio fan no afiliado con Epic Games ni Psyonix.</p>
+</footer>
+
+
+<script>
+
+function result(type){
+
+ const box=document.getElementById("result");
+
+ const answers={
+
+ aim:
+ "🎯 Entrena tiros, power shots y precisión. Intenta colocar la pelota en diferentes zonas de la portería.",
+
+ air:
+ "🚀 Empieza dominando el fast aerial y el control aéreo antes de practicar air dribbles o flip resets.",
+
+ def:
+ "🛡️ Practica shadow defense, despejes y paciencia. No ataques cada balón inmediatamente.",
+
+ speed:
+ "⚡ Entrena recoveries, powerslide, wave dash y rutas de boost para moverte rápido sin desperdiciarlo.",
+
+ team:
+ "👥 Concéntrate en rotaciones y espacio. Mira dónde está tu compañero antes de atacar el balón."
+
+ };
+
+ box.textContent=answers[type];
+
+}
+
+
+function searchGuide(){
+
+ const text=document
+ .getElementById("search")
+ .value
+ .toLowerCase();
+
+ const sections=document.querySelectorAll(".guide");
+
+ sections.forEach(section=>{
+
+  const content=section.innerText.toLowerCase();
+
+  section.style.display=
+   content.includes(text) ? "" : "none";
+
+ });
+
+}
+
+</script>
+
+</body>
+</html>
